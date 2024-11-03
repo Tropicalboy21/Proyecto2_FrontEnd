@@ -1,0 +1,169 @@
+.container {
+    height: 1000px;
+    margin-left: 300px;
+    background-color:rgb(255, 255, 255)
+    
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+}
+
+.padre {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background: #ffffff; 
+}
+
+.tamano-imagen {
+    width: 284px;
+
+}
+
+.wrapper {
+    width: 285px;
+    text-align: center;
+} 
+
+form{
+    width: 285px;
+    margin: 35px 0;
+}
+
+.Buttons{
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Buttons button{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 3px;
+    transition-duration: .2s;
+
+}
+
+.Buttons button:hover{
+    transform: scale(.9);
+
+}
+
+h2{
+    text-align: center;
+}
+
+.iniciar{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 12px;
+    background-color: hsl(0, 67%, 45%);
+    color: white;
+    transition-duration: .2s
+}
+
+.iniciar:hover{
+    transform: scale(.9);
+    box-shadow: 0 3px 15px -2px;
+}
+
+
+.forgot {
+    text-decoration: none;
+    font-size: smaller;
+    color: rgb(195, 196, 199);
+}
+
+.forgot:hover {
+    text-decoration: none;
+    font-size: smaller;
+
+    color: rgb(228, 80, 80);
+}
+
+.Inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.Inputs input{
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: rgba(128, 128, 128, 0.171);
+}
+
+.estilo-profile {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 20px auto;
+}
+
+.cajatexto {
+    background-color: #cccccc40;
+    border-color: slategray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+}
+
+.cajatexto:focus {
+    outline: 1px solid cornflowerblue;
+    box-shadow: 0 0 10px cornflowerblue;
+}
+
+.btnform {
+    background-color: #0D6EFD;
+    border-color: slategray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.texto {
+    font-size: 20px;
+    color: slategray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+}
+
+.btnswitch {
+    background-color: darkblue;
+    border-radius: 30px;
+    padding: 8px;
+    border-width: 0px;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.home{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.multas{
+    text-align: start;
+    padding: 10px;
+    background-color: #d9d9d9;
+    height: 300px;
+    border-radius: 15px;
+}
+.message {
+    text-align: center;
+    max-width: 285px;
+}
