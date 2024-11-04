@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
-import ImagenLogo from '../assets/logo.jpg'
-import ImageProfile from '../assets/imagen-perfil.jpg'
+import ImagenLogo from '../assets/imgs/logo.png'
 
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
@@ -42,35 +41,37 @@ const Login = ({ onLoginSuccess }) => {
   };
 
   return (
-    <form onSubmit={handleLogin}  className='padre'>
-      <img src={ImagenLogo} alt="imagelogo" className='tamano-imagen' />
-      <div className='wrapper'>
-        <div className='Inputs'>
-            <input
-              type="text"
-              placeholder='usuario'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <input
-              type="password"
-              placeholder='Contraseña'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+    <div className='login_section'>
+      <form onSubmit={handleLogin}  className='padre'>
+        <img src={ImagenLogo} alt="imagelogo" className='tamano-imagen' />
+        <h2 className='title'>Transito Inteligente</h2>
+        <div className='wrapper'>
+          <div className='Inputs'>
+              <input
+                type="text"
+                placeholder='Usuario'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <Link to="/forgot-password" className='forgot'>Olvido su contraseña?</Link>
+              <input
+                type="password"
+                placeholder='Contraseña'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+          </div>
+          <div className='Buttons'>
+            <button type="submit" className='iniciar login'>Iniciar sesion</button>
+          </div>
+          <p>No tiene cuenta? <Link to="/register" className='registrarse'>Registrarse</Link></p>
         </div>
-        <Link to="/forgot-password" className='forgot'>Olvido su contraseña?</Link>
-        <div className='Buttons'>
-          <button type="submit" className='iniciar'>Iniciar Session</button>
-          <Link to="/register">
-            <button>Registrarse</button>
-          </Link>
-        </div>
-      </div>
-      {error && <p>{error}</p>}
-    </form>
+        {error && <p>{error}</p>}
+      </form>
+      <div className='illustration'></div>
+    </div>
   );
 };
 

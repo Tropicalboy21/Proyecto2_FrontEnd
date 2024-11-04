@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import ImageProfile from '../assets/imagen-perfil.jpg'
+import ImageProfile from '../assets/imgs/imagen-perfil.jpg'
 import { useNavigate } from 'react-router-dom';
 
 const Home = ({ username }) => {

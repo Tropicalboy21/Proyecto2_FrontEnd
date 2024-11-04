@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'fontLastica';
+    src: url('./assets/fonts/Font-Lastica.ttf');
+}
+
+body{
+    font-family: "Montserrat", sans-serif;}
+
 .container {
     height: 1000px;
     margin-left: 300px;
@@ -6,24 +14,37 @@
 }
 
 #root{
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center
 }
 
 .padre {
-    max-width: 400px;
+    max-width: 360px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50vh;
-    background: #ffffff; 
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 15px 0 0 15px;
+    padding: 25px;
 }
 
 .tamano-imagen {
-    width: 284px;
+    width: 100px;
+    margin-bottom: 15px;
+}
 
+.title{
+    font-family: fontLastica;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin: 20px 0;
 }
 
 .wrapper {
@@ -37,7 +58,7 @@ form{
 }
 
 .Buttons{
-    padding: 5px;
+    padding: 5px 0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -46,7 +67,6 @@ form{
     padding: 5px;
     border: none;
     border-radius: 5px;
-    margin-left: 3px;
     transition-duration: .2s;
 
 }
@@ -61,13 +81,18 @@ h2{
 }
 
 .iniciar{
-    padding: 5px;
     border: none;
     border-radius: 5px;
-    margin-left: 12px;
     background-color: hsl(0, 67%, 45%);
     color: white;
     transition-duration: .2s
+}
+
+.login {
+    width: 100%;
+    font-family: fontLastica;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 .iniciar:hover{
@@ -77,16 +102,18 @@ h2{
 
 
 .forgot {
+    text-align: right;
     text-decoration: none;
     font-size: smaller;
-    color: rgb(195, 196, 199);
+    color: hsl(0, 75%, 77%);
+    transition-duration: .2s
+    
 }
 
 .forgot:hover {
     text-decoration: none;
     font-size: smaller;
-
-    color: rgb(228, 80, 80);
+    color: red;
 }
 
 .Inputs{
@@ -95,10 +122,14 @@ h2{
 }
 
 .Inputs input{
-    margin-top: 15px;
+    margin-bottom: 15px;
     padding: 5px;
     border-radius: 5px;
     border-color: rgba(128, 128, 128, 0.171);
+}
+
+.Inputs input:focus {
+    border-color:  red !important;
 }
 
 .estilo-profile {
@@ -106,6 +137,19 @@ h2{
     height: 120px;
     width: 120px;
     margin: 20px auto;
+}
+
+.registrarse {
+    text-decoration: none;
+    font-weight: 500;
+    color: hsl(0, 75%, 77%);
+    transition-duration: .2s
+}
+
+.registrarse:Hover {
+    text-decoration: none;
+    font-weight: 500;
+    color: red;
 }
 
 .cajatexto {
@@ -167,3 +211,31 @@ h2{
     text-align: center;
     max-width: 285px;
 }
+
+.login_section{
+    display: flex; 
+}
+
+.illustration{
+    width: 400px;
+    background-image: url('./assets/imgs/bg-login.png');
+    background-size: cover;
+    height: 505.7px;
+    margin: 35px 0;
+    border-radius:  0 15px 15px 0;
+    box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 800px) {
+
+    .illustration{
+        display: none;
+    }
+
+    .padre{
+        border-radius: 15px;
+    }
+
+}
+
+
