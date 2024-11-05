@@ -24,23 +24,33 @@ const Register = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Registration failed');
+        throw new Error('No se pudo registrar el usuario');
       }
 
-      setMessage('Registration successful!');
+      setMessage('Usuario registrado con exitosamente!');
     } catch (error) {
       setMessage(error.message);
     }
   };
 
   return (
-    
-    <form onSubmit={handleRegister}>
-        <h2>Registrarse</h2>
+    <div className='register-container'>
+            <Link to="/Login">
+            <button className='volver'>volver</button>
+          </Link>
+    <form onSubmit={handleRegister}  className='padre2'>
+        <h2 className='title'>Crear nueva cuenta</h2>
       <div className='Inputs'>
+      <input
+          type="password"
+          placeholder='Cédula'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         <input
           type="text"
-          placeholder='usuario'
+          placeholder='Usuario'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -62,13 +72,11 @@ const Register = () => {
         />
       </div>
       <div className='Buttons'>
-        <button className='iniciar' type="submit">Registrarse</button>
-        <Link to="/Login">
-            <button>Iniciar Sesion</button>
-          </Link>
+        <button className='iniciar login' type="submit">Registrarse</button>
       </div>
       {message && <p>{message}</p>}
     </form>
+    </div>
   );
 };
 

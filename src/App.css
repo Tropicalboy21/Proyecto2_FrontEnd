@@ -20,6 +20,11 @@ body{
     align-items: center
 }
 
+.app_container{
+
+
+}
+
 .padre {
     max-width: 360px;
     width: 100%;
@@ -33,6 +38,24 @@ body{
     border-radius: 15px 0 0 15px;
     padding: 25px;
 }
+
+
+
+.padre2 {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius:  15px;
+    padding: 25px;
+}
+
+
 
 .tamano-imagen {
     width: 100px;
@@ -54,8 +77,26 @@ body{
 
 form{
     width: 285px;
-    margin: 35px 0;
+    margin: 35px auto;
 }
+
+.volver{
+    position: absolute;
+    top:50px;
+    left: 16px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    padding:  5px 20px;
+    transition-duration: .2s;
+}
+
+.volver:hover{
+    transform: scale(1.1);
+
+}
+
 
 .Buttons{
     padding: 5px 0;
@@ -72,8 +113,7 @@ form{
 }
 
 .Buttons button:hover{
-    transform: scale(.9);
-
+    transform: scale(1.1);
 }
 
 h2{
@@ -89,7 +129,7 @@ h2{
 }
 
 .login {
-    width: 100%;
+    width: 285px;
     font-family: fontLastica;
     letter-spacing: 2px;
     margin-bottom: 15px;
@@ -106,8 +146,8 @@ h2{
     text-decoration: none;
     font-size: smaller;
     color: hsl(0, 75%, 77%);
-    transition-duration: .2s
-    
+    transition-duration: .2s;
+    font-weight: 600;
 }
 
 .forgot:hover {
@@ -122,6 +162,7 @@ h2{
 }
 
 .Inputs input{
+    width: 285px;
     margin-bottom: 15px;
     padding: 5px;
     border-radius: 5px;
@@ -212,8 +253,21 @@ h2{
     max-width: 285px;
 }
 
+
+.register-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/imgs/bg2.jpg');
+    background-size: cover;
+
+}
+
 .login_section{
     display: flex; 
+    justify-content: center;
 }
 
 .illustration{
@@ -224,6 +278,12 @@ h2{
     margin: 35px 0;
     border-radius:  0 15px 15px 0;
     box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+
+}
+
+.footer {
+    text-align: center;
+    font-size: smaller;
 }
 
 @media (max-width: 800px) {
@@ -239,3 +299,11 @@ h2{
 }
 
 
+@keyframes a {
+    0% {
+        background-position: 0 -1100px;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
