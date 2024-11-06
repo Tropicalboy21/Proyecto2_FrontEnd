@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
 import ImagenLogo from '../assets/imgs/logo.png'
+import Alert from '../components/Alert'
 
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Hook for programmatic navigation
+  const [showAlert, setShowAlert] = useState(false); 
+  const [alertType, setAlertType] = useState(''); 
+  const [alertMessage, setAlertMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -32,16 +36,34 @@ const Login = ({ onLoginSuccess }) => {
       console.log('Token:', data.token);
       localStorage.setItem('token', data.token);
 
-      // Notify parent component and redirect
       onLoginSuccess(username);
-      navigate('/home'); // Redirect to Home page
+      navigate('/home');
+
+
     } catch (error) {
+      setError(error.message);
+
+      // show error Alert
+      setAlertMessage(error.message);
+      setShowAlert(true);
       setError(error.message);
     }
   };
 
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+    setAlertMessage('');
+  };
+
   return (
     <div className='login_section'>
+       {showAlert && (
+        <Alert
+          type={alertType}
+          message={alertMessage}
+          onClose={handleCloseAlert}
+        />
+      )}
       <form onSubmit={handleLogin}  className='padre'>
         <img src={ImagenLogo} alt="imagelogo" className='tamano-imagen' />
         <h2 className='title'>Transito Inteligente</h2>
@@ -68,7 +90,7 @@ const Login = ({ onLoginSuccess }) => {
           </div>
           <p>No tiene cuenta? <Link to="/register" className='registrarse'>Registrarse</Link></p>
         </div>
-        {error && <p>{error}</p>}
+        {/* {error && <p>{error}</p>} */}
       </form>
       <div className='illustration'></div>
     </div>
