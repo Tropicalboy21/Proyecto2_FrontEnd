@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import '../App.css'
+import Alert from '../components/Alert'
 
 const ResetPassword = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const token = query.get('token');
   const email = query.get('email');
+  const [showAlert, setShowAlert] = useState(false); 
+  const [alertType, setAlertType] = useState(''); 
+  const [alertMessage, setAlertMessage] = useState('');
   const navigate = useNavigate();
 
   const [newPassword, setNewPassword] = useState('');
@@ -31,19 +35,40 @@ const ResetPassword = () => {
         throw new Error('Error al restablecer la contraseña');
       }
 
-      setMessage('¡Restablecimiento de contraseña exitoso! Ahora puedes iniciar sesión con tu nueva contraseña.');
+      setAlertMessage('¡Restablecimiento de contraseña exitoso! Ahora puedes iniciar sesión con tu nueva contraseña.');
       setTimeout(() => {
         navigate('/Login');
       }, 2000);
     } catch (error) {
-      setMessage(error.message);
+      if(error.message == 'Failed to fetch'){
+        setAlertMessage('Lo sentimos, error en la conexión');
+      } else {
+        setAlertMessage(error.message);
+      }
+      setShowAlert(true);
     }
   };
 
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+    setAlertMessage('');
+  };
+
+
   return (
-    <div>
-      <form onSubmit={handleResetPassword}>
-      <h2>Reset Password</h2>
+    <div className='view-container'>
+      {showAlert && (
+        <Alert
+          type={alertType}
+          message={alertMessage}
+          onClose={handleCloseAlert}
+        />
+      )}
+        <Link to="/Login">
+          <button className='volver'>volver</button>
+        </Link>
+      <form onSubmit={handleResetPassword} className='padre2'>
+      <h2 className='title'>Restablecer acceso</h2>
         <div className='Inputs'>
         <input
           type="email"
@@ -61,13 +86,9 @@ const ResetPassword = () => {
           />
         </div>
         <div className='Buttons'>
-          <button type="submit" className='iniciar'>Reset Password</button>
-          <Link to="/Login">
-            <button>Cancelar</button>
-          </Link>
+          <button type="submit" className='iniciar login'>Recuperar Clave</button>
         </div>
       </form>
-      {message && <p className='message'>{message}</p>}
     </div>
   );
 };

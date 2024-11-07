@@ -41,12 +41,12 @@ const Login = ({ onLoginSuccess }) => {
 
 
     } catch (error) {
-      setError(error.message);
-
-      // show error Alert
-      setAlertMessage(error.message);
+      if(error.message == 'Failed to fetch'){
+        setAlertMessage('Lo sentimos, error en la conexión');
+      } else {
+        setAlertMessage(error.message);
+      }
       setShowAlert(true);
-      setError(error.message);
     }
   };
 

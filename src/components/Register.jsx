@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { useNavigate, Link } from 'react-router-dom';
+import Alert from '../components/Alert'
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [showAlert, setShowAlert] = useState(false); 
+  const [alertType, setAlertType] = useState(''); 
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -27,14 +31,34 @@ const Register = () => {
         throw new Error('No se pudo registrar el usuario');
       }
 
-      setMessage('Usuario registrado con exitosamente!');
+      setAlertMessage('Usuario registrado con exitosamente!');
+      setShowAlert(true);
     } catch (error) {
-      setMessage(error.message);
+      if(error.message == 'Failed to fetch'){
+        setAlertMessage('Lo sentimos, error en la conexión');
+      } else {
+        setAlertMessage(error.message);
+      }
+      setShowAlert(true);
     }
+    }
+
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+    setAlertMessage('');
   };
+
 
   return (
     <div className='register-container'>
+    {showAlert && (
+        <Alert
+          type={alertType}
+          message={alertMessage}
+          onClose={handleCloseAlert}
+        />
+      )}
             <Link to="/Login">
             <button className='volver'>volver</button>
           </Link>
