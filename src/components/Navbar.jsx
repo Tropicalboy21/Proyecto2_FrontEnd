@@ -5,8 +5,9 @@ const Navbar = ({username}) =>{
 
 return(<div>
      <header className="header">
-        <div className="logo">LOGO</div>
+        <div className="logo"></div>
         <nav className="nav">
+        <Link to="/home"><button >HOME</button></Link>
           <Link to="/multas"><button >MULTAS</button></Link>
           <button>VEHICULOS</button>
           <button>DISPUTAS</button>

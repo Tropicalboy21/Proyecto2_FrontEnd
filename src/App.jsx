@@ -12,7 +12,7 @@ import ProtectedLayout from './components/ProtectedLayout';
 
 const App = () => {
   const [username, setUsername] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const handleLoginSuccess = (user) => {
     setUsername(user);
