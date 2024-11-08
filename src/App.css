@@ -429,3 +429,12 @@ h2{
     text-align: center;
     max-width: 285px;
 }
+
+.logo{
+    height: 39px;
+    width: 30px;
+    background-image: url('./assets/imgs/logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

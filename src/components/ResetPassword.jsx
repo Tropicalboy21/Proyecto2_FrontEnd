@@ -14,7 +14,6 @@ const ResetPassword = () => {
   const navigate = useNavigate();
 
   const [newPassword, setNewPassword] = useState('');
-  const [message, setMessage] = useState('');
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
@@ -32,10 +31,14 @@ const ResetPassword = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Error al restablecer la contraseña');
+        setAlertMessage('Error al restablecer la contraseña');
+        setAlertType('error')
       }
 
       setAlertMessage('¡Restablecimiento de contraseña exitoso! Ahora puedes iniciar sesión con tu nueva contraseña.');
+      setAlertType('success')
+      setShowAlert(true);
+
       setTimeout(() => {
         navigate('/Login');
       }, 2000);
@@ -70,13 +73,13 @@ const ResetPassword = () => {
       <form onSubmit={handleResetPassword} className='padre2'>
       <h2 className='title'>Restablecer acceso</h2>
         <div className='Inputs'>
-        <input
-          type="email"
-          placeholder='Email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <input
+            type="email"
+            placeholder='Email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
           <input
             type="password"
             value={newPassword}

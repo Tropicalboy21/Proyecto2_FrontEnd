@@ -8,6 +8,7 @@ import ResetPassword from './components/ResetPassword';
 import Footer from './components/Footer';
 import Multas from './components/Multas';
 import Navbar from'./components/Navbar';
+import ProtectedLayout from './components/ProtectedLayout';
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -26,14 +27,20 @@ const App = () => {
   return (
     <div className='app-container'>
       <Router>
-      {isLoggedIn && <Navbar onLogout={handleLogout} />} 
         <Routes>
+          {/* Public Routes */}
           <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-          <Route path="/home" element={isLoggedIn ? <Home username={username} /> : <Navigate to="/login" />} />
-          <Route path="/multas" element = {<Multas/>} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/reset-password" element={<ResetPassword />} /> {}
+          <Route path="/reset-password" element={<ResetPassword />} />
+
+          {/* Protected Routes */}
+          <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
+            <Route path="/home" element={<Home username={username} />} />
+            <Route path="/multas" element={<Multas />} />
+          </Route>
+
+          {/* Catch-all Route */}
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
