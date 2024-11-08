@@ -431,8 +431,8 @@ h2{
 }
 
 .logo{
-    height: 39px;
-    width: 30px;
+    height: 55px;
+    width: 60px;
     background-image: url('./assets/imgs/logo.png');
     background-position: center;
     background-size: contain;
