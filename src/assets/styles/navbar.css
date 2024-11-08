@@ -1,0 +1,32 @@
+.header {
+    background-color: #D32F2F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100vw;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav button {
+    background-color: #9E9E9E;
+    color: white;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-info {
+    font-weight: bold;
+    background-color: #C62828;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
