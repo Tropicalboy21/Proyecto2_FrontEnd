@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 2rem 2rem;
+    background: linear-gradient(to right, #f0f4ff, #d9e4ff);
+    min-height: 100vh;
+}
+
+.intro {
+    max-width: 50%;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.intro p {
+    color: #666;
+    margin: 1rem 0;
+}
+
+.more-info {
+    background-color: #4a90e2;
+    color: rgb(233, 225, 225);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.more-info:hover {
+    background-color: #357ab8;
+}
+
+.illustration {
+    /* Estilo para la ilustración o imagen */
+}
