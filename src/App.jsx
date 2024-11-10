@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Multas from './components/Multas';
 import Navbar from'./components/Navbar';
 import ProtectedLayout from './components/ProtectedLayout';
+import Disputas from './components/Disputas';
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -38,6 +39,8 @@ const App = () => {
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
             <Route path="/home" element={<Home username={username} />} />
             <Route path="/multas" element={<Multas />} />
+            <Route path="/disputas" element={<Disputas />} />
+
           </Route>
 
           {/* Catch-all Route */}
