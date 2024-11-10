@@ -1,9 +1,10 @@
 import React from 'react';
 import '../assets/styles/home.css'; 
+
 function Home() {
     return (
         <div className="home">
-            <header className="navbar">
+            <header className="Navbar">
             </header>
             <main className="content">
                 <div className="intro">
