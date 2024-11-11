@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css'
-import '../assets/styles/multas.css'
+import '../assets/styles/general.css'
 import {Link} from "react-router-dom"
 const Disputas = ({username}) =>{
 
@@ -10,26 +10,26 @@ const Disputas = ({username}) =>{
         <table className="fines-table">
           <thead>
             <tr>
-              <th>MULTAS</th>
-              <th>RAZON</th>
-              <th>MONTO</th>
+              <th>Disputa</th>
+              <th>Estado</th>
+              <th>Ver mas</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>MULTA1</td>
-              <td>RAZON</td>
-              <td>MONTO</td>
+              <td>Disputa1</td>
+              <td>Pending</td>
+              <td><Link to="/home"><button className="btn-general" >Ver mas</button></Link></td>
             </tr>
             <tr>
-              <td>MULTA2</td>
-              <td>RAZON</td>
-              <td>MONTO</td>
+              <td>Disputa2</td>
+              <td>Declined</td>
+              <td><Link to="/home"><button className="btn-general" >Ver mas</button></Link> </td>
             </tr>
             <tr>
-              <td>MULTA3</td>
-              <td>RAZON</td>
-              <td>MONTO</td>
+              <td>Disputa3</td>
+              <td>Accepted</td>
+              <td><Link to="/home"><button className="btn-general" >Ver mas</button></Link>  </td>
             </tr>
           </tbody>
         </table>

@@ -10,6 +10,8 @@ import Multas from './components/Multas';
 import Navbar from'./components/Navbar';
 import ProtectedLayout from './components/ProtectedLayout';
 import Disputas from './components/Disputas';
+import DisputarMulta from './components/DisputarMulta';
+
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -40,6 +42,9 @@ const App = () => {
             <Route path="/home" element={<Home username={username} />} />
             <Route path="/multas" element={<Multas />} />
             <Route path="/disputas" element={<Disputas />} />
+            <Route path="/disputarMulta" element={<DisputarMulta />} />
+
+            
 
           </Route>
 
