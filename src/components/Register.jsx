@@ -4,9 +4,10 @@ import { useNavigate, Link } from 'react-router-dom';
 import Alert from '../components/Alert'
 
 const Register = () => {
-  const [name, setName] = useState('');
+  const [username, setUserName] = useState('');
+  const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
-  const [cedula, setCedula] = useState('');
+  const [Iddocument, setIdDocument] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showAlert, setShowAlert] = useState(false); 
@@ -22,11 +23,12 @@ const Register = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          Name: name,
-          LastName: lastname,
-          Cedula: cedula, 
+          UserName: username,
           Email: email,
           Password: password,
+          FirstName: firstname,
+          LastName: lastname,
+          IdDocument: Iddocument, 
         }),
       });
 
@@ -75,8 +77,8 @@ const Register = () => {
           <input
             type="text"
             placeholder='Nombre'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={firstname}
+            onChange={(e) => setFirstName(e.target.value)}
             required
           />
           <input
@@ -88,9 +90,16 @@ const Register = () => {
           />
           <input
             type="text"
+            placeholder='Usuario'
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+          />
+          <input
+            type="text"
             placeholder='Cédula'
-            value={cedula}
-            onChange={(e) => setCedula(e.target.value)}
+            value={Iddocument}
+            onChange={(e) => setIdDocument(e.target.value)}
             required
           />
           <input
