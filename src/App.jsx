@@ -10,6 +10,7 @@ import Multas from './components/Multas';
 import Navbar from'./components/Navbar';
 import ProtectedLayout from './components/ProtectedLayout';
 import CodeVerification from './components/CodeVerification';
+import CreacionMulta from './components/CreacionMulta';
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -40,6 +41,7 @@ const App = () => {
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
             <Route path="/home" element={<Home username={username} />} />
             <Route path="/multas" element={<Multas />} />
+            <Route path="/creacionMulta" element={<CreacionMulta/>} />
           </Route>
 
           {/* Catch-all Route */}
