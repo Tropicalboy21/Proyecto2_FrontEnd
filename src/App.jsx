@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Multas from './components/Multas';
 import Navbar from'./components/Navbar';
 import ProtectedLayout from './components/ProtectedLayout';
+import CodeVerification from './components/CodeVerification';
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -30,6 +31,7 @@ const App = () => {
         <Routes>
           {/* Public Routes */}
           <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/CodeVerification" element={<CodeVerification onLoginSuccess={handleLoginSuccess} />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />
