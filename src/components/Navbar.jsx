@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../assets/styles/navbar.css';
 
-const Navbar = ({ username }) => {
+const Navbar = ({ username, onLogout }) => {
   return (
     <header className="header">
       <div className="logo"> </div>
@@ -26,7 +26,8 @@ const Navbar = ({ username }) => {
           <button className="nav-button">MAPA</button>
         </Link>
       </nav>
-      <div className="user-info">{username ? `Usuario: ${username}` : 'Usuario'}</div>
+      <button className="nav-button" onClick={onLogout}>Logout</button>
+
     </header>
   );
 }

@@ -11,10 +11,18 @@ import Navbar from'./components/Navbar';
 import ProtectedLayout from './components/ProtectedLayout';
 import CodeVerification from './components/CodeVerification';
 import CreacionMulta from './components/CreacionMulta';
+import HomeAdmi from './components/HomeAdmi'
 
 const App = () => {
   const [username, setUsername] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
 
   const handleLoginSuccess = (user) => {
     setUsername(user);
@@ -40,6 +48,7 @@ const App = () => {
           {/* Protected Routes */}
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
             <Route path="/home" element={<Home username={username} />} />
+            <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
             <Route path="/multas" element={<Multas />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
           </Route>
