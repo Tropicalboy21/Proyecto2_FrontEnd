@@ -7,7 +7,7 @@ import Alert from '../components/Alert'
 const CodeVerification = ({username}) =>{
 
     return(
-    <div className='register-container'>
+    <div className='view-container'>
 
         <form  className='padre2'>
         <h2 className='title'>Confirmar Acceso</h2>

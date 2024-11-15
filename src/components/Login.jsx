@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../App.css';
+import '../assets/styles/login.css';
 import ImagenLogo from '../assets/imgs/logo.png'
 import Alert from '../components/Alert'
 
@@ -56,14 +57,14 @@ const Login = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className='login_section'>
-       {showAlert && (
-        <Alert
-          type={alertType}
-          message={alertMessage}
-          onClose={handleCloseAlert}
-        />
-      )}
+    <div className='view-container'>
+        {showAlert && (
+          <Alert
+            type={alertType}
+            message={alertMessage}
+            onClose={handleCloseAlert}
+          />
+        )}
       <form onSubmit={handleLogin}  className='padre'>
         <img src={ImagenLogo} alt="imagelogo" className='tamano-imagen' />
         <h2 className='title'>Transito Inteligente</h2>
@@ -90,9 +91,10 @@ const Login = ({ onLoginSuccess }) => {
           </div>
           <p>No tiene cuenta? <Link to="/register" className='registrarse'>Registrarse</Link></p>
         </div>
-        {/* {error && <p>{error}</p>} */}
       </form>
-      <div className='illustration'></div>
+      <div className='illustration'>
+        <Link to="/login-interno" className='interno'>Interno</Link>
+      </div>
     </div>
   );
 };
