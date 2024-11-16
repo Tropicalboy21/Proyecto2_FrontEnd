@@ -13,6 +13,7 @@ import CodeVerification from './components/CodeVerification';
 import CreacionMulta from './components/CreacionMulta';
 import HomeAdmi from './components/HomeAdmi'
 import Vehiculos from './components/Vehiculos';
+import Disputas from './components/Disputas'
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -58,6 +59,7 @@ const App = () => {
             <Route path="/multas" element={<Multas />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
             <Route path="/vehiculos" element={<Vehiculos />} />
+            <Route path="/disputas" element={<Disputas />} />
           </Route>
 
           {/* Catch-all Route */}
