@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import '../App.css';
+import '../assets/styles/app.css';
+import '../assets/styles/login.css';
 import ImagenLogo from '../assets/imgs/logo.png'
 import Alert from '../components/Alert'
 
@@ -34,10 +35,10 @@ const Login = ({ onLoginSuccess }) => {
 
       const data = await response.json();
       console.log('Token:', data.token);
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('tempToken', data.token);
 
       onLoginSuccess(username);
-      navigate('/home');
+      navigate('/CodeVerification');
 
 
     } catch (error) {
@@ -56,14 +57,14 @@ const Login = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className='login_section'>
-       {showAlert && (
-        <Alert
-          type={alertType}
-          message={alertMessage}
-          onClose={handleCloseAlert}
-        />
-      )}
+    <div className='view-container'>
+        {showAlert && (
+          <Alert
+            type={alertType}
+            message={alertMessage}
+            onClose={handleCloseAlert}
+          />
+        )}
       <form onSubmit={handleLogin}  className='padre'>
         <img src={ImagenLogo} alt="imagelogo" className='tamano-imagen' />
         <h2 className='title'>Transito Inteligente</h2>
@@ -90,9 +91,9 @@ const Login = ({ onLoginSuccess }) => {
           </div>
           <p>No tiene cuenta? <Link to="/register" className='registrarse'>Registrarse</Link></p>
         </div>
-        {/* {error && <p>{error}</p>} */}
       </form>
-      <div className='illustration'></div>
+      <div className='illustration'>
+      </div>
     </div>
   );
 };

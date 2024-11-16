@@ -4,7 +4,8 @@
 }
 
 body{
-    font-family: "Montserrat", sans-serif;}
+    font-family: "Montserrat", sans-serif;
+}
 
 .container {
     height: 1000px;
@@ -20,12 +21,27 @@ body{
     align-items: center
 }
 
-.app_container{
+/* .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar-open {
+    margin-left: 250px;
+  }
+  
+  .sidebar-closed {
+    margin-left: 60px;
+  }
 
-
-}
-
-.padre {
+ */
+.padre { 
     max-width: 360px;
     width: 100%;
     display: flex;
@@ -438,12 +454,4 @@ input:focus-visible {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-}
-
-.btn-general {
-    background-color: #C62828;
-    padding: 0.5rem 1rem;
-    border-color: #C62828;
-    border-radius: 5px;
-    color: white;
 }
