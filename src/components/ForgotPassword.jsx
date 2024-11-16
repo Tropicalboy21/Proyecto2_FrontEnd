@@ -26,9 +26,11 @@ const ForgotPassword = () => {
 
       if (response.ok) {
         setAlertMessage('Se ha enviado un correo electrónico para restablecer la contraseña a su dirección de correo electrónico.');
+        setAlertType("success")
         setShowAlert(true);
       } else {
         throw new Error('No se pudo enviar el correo electrónico para restablecer la contraseña.');
+        setAlertType("error")
       }
     } catch (error) {
       if(error.message == 'Failed to fetch'){

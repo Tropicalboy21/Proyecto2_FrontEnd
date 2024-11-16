@@ -38,7 +38,7 @@ const Login = ({ onLoginSuccess }) => {
       localStorage.setItem('token', data.token);
 
       onLoginSuccess(username);
-      navigate('/home');
+      navigate('/CodeVerification');
 
 
     } catch (error) {
