@@ -46,6 +46,7 @@ const Vehiculos = () => {
   };
 
   return (
+    <div className='view-container'>
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
       <h1>Lectura de Placas</h1>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
@@ -55,7 +56,7 @@ const Vehiculos = () => {
           onChange={handleFileChange}
           style={{ marginBottom: '10px', display: 'block' }}
         />
-        <button type="submit" disabled={loading} style={{ padding: '10px 20px', cursor: 'pointer' }}>
+        <button type="submit" disabled={loading} className='iniciar login'>
           {loading ? 'Procesando...' : 'Subir y Leer Placa'}
         </button>
       </form>
@@ -68,6 +69,7 @@ const Vehiculos = () => {
           </p>
         </div>
       )}
+    </div>
     </div>
   );
 };

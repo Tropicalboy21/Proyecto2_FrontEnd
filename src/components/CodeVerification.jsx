@@ -9,6 +9,7 @@ const CodeVerification = ({username}) =>{
   const [showAlert, setShowAlert] = useState(false); 
   const [alertType, setAlertType] = useState(''); 
   const [alertMessage, setAlertMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleVerification = async (e) => {
     e.preventDefault();
@@ -34,7 +35,7 @@ const CodeVerification = ({username}) =>{
       localStorage.removeItem('tempToken');
 
 
-      onLoginSuccess(username, data.role);
+      localStorage.setItem('token', data.token); 
 
       // Navigate based on the user's role
       if (data.role === 'Admin') {

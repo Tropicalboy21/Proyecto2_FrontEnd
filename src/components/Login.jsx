@@ -35,7 +35,7 @@ const Login = ({ onLoginSuccess }) => {
 
       const data = await response.json();
       console.log('Token:', data.token);
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('tempToken', data.token);
 
       onLoginSuccess(username);
       navigate('/CodeVerification');
