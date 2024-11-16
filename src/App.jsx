@@ -12,6 +12,7 @@ import ProtectedLayout from './components/ProtectedLayout';
 import CodeVerification from './components/CodeVerification';
 import CreacionMulta from './components/CreacionMulta';
 import HomeAdmi from './components/HomeAdmi'
+import Vehiculos from './components/Vehiculos';
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
             <Route path="/multas" element={<Multas />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
+            <Route path="/vehiculos" element={<Vehiculos />} />
           </Route>
 
           {/* Catch-all Route */}

@@ -26,7 +26,7 @@ const Navbar = ({ username, onLogout }) => {
           <button className="nav-button">MAPA</button>
         </Link>
       </nav>
-      <button className="nav-button" onClick={onLogout}>Logout</button>
+      <button className="nav-button" onClick={onLogout}>Salir</button>
 
     </header>
   );
