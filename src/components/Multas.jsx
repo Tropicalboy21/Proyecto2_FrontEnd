@@ -2,40 +2,48 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import '../assets/styles/multas.css';
 
-const Multas = ({ email }) => {
+const Multas = () => {
   const [fines, setFines] = useState([]);
   const [error, setError] = useState(null);
 
+  const username = localStorage.getItem('username');
+  
   useEffect(() => {
     const fetchFines = async () => {
       try {
         
-        const response = await fetch(`http://localhost:7289/api/fines/${email}`);
-        
-        
+        const response = await fetch(`https://localhost:7289/api/Fines?userin=${username}`, {
+          
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
 
-        
         const data = await response.json();
+        
 
-       
+        
         if (Array.isArray(data) && data.length > 0) {
-          setFines(data); 
+          setFines(data);
         } else {
-          setFines([]);  
+          setFines([]); 
         }
       } catch (err) {
-        setError(err.message); 
+        setError(err.message);
       }
     };
 
     
-    if (email) {
+    if (username) {
       fetchFines();
     }
-  }, [email]); 
+  }, [username]);
+
 
   return (
     <div className="view-container">
@@ -59,11 +67,11 @@ const Multas = ({ email }) => {
               
               {fines.length > 0 ? (
                 fines.map((fine) => (
-                  <tr key={fine.Id}>
-                    <td>{fine.Id}</td>
-                    <td>{fine.Description}</td>
-                    <td>${fine.Amount}</td>
-                    <td>{new Date(fine.IssuedDate).toLocaleDateString()}</td>
+                  <tr key={fine.id}>
+                    <td>{fine.id}</td>
+                    <td>{fine.description}</td>
+                    <td>₡{fine.amount}</td>
+                    <td>{new Date(fine.issuedDate).toLocaleDateString()}</td>
                   </tr>
                 ))
               ) : (
@@ -81,6 +89,6 @@ const Multas = ({ email }) => {
       </main>
     </div>
   );
-};
 
+}
 export default Multas;
