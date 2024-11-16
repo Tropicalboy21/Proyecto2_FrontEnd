@@ -15,23 +15,28 @@ import HomeAdmi from './components/HomeAdmi'
 
 const App = () => {
   const [username, setUsername] = useState('');
+  const [role, setRole] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setIsSidebarOpen(!isSidebarOpen);
+  // };
 
 
   const handleLoginSuccess = (user) => {
     setUsername(user);
+    setRole(role);
     setIsLoggedIn(true);
+
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUsername('');
+    setRole('');
+    localStorage.removeItem('token');
   };
 
   return (
@@ -40,7 +45,7 @@ const App = () => {
         <Routes>
           {/* Public Routes */}
           <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-          <Route path="/CodeVerification" element={<CodeVerification onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/CodeVerification" element={<CodeVerification username={username} onLoginSuccess={handleLoginSuccess} />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />

@@ -44,25 +44,97 @@ body {
 .dashboard{
     width: 100vw;
     height: 100vh;
-    background-color: coral;
-    display: grid;
+    /* display: flex; */
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     margin-left: 250px;
+    padding: 55px;
+    align-content: center;
+}
+
+.row {
+    display: flex;
+    height: 25%;
+    width: 90%;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    align-content: center;
+    max-width: 856px;
 }
 
 .box-component{
-    width: 50%;
+    width: 45%;
     background-color: white;
     box-shadow: 0 3px 15px -2px;
-    height: 20%;
-    margin: 25px;
-
+    height: 90% !important;
+    margin: 10px;
+    height: 40px;
+    border-radius: 15px;
+    transition-duration: .2s;
+    padding: 10px;
 }
+
+.box-component:hover{
+    transform: scale(1.1);
+}
+
+
+
+.box-component2{
+    width: 93%;
+    background-color: white;
+    box-shadow: 0 3px 15px -2px;
+    height: 90%;
+    margin: 10px;
+    border-radius: 15px;
+    transition-duration: .2s;
+}
+
+.box-component2:hover{
+    transform: scale(1.1);
+}
+
+.component-head{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.circle{
+    background-color: greenyellow;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.number{
+    padding: 10px;
+    font-size: 75px;
+}
+
 
 @media (max-width: 768px) {
     .dashboard {
-      margin-left: 0;
+        margin-left: 0;
     }
-  
-  }
+
+    .dashboard{
+        padding: 0;
+    }
+    
+    .box-component{
+        width: 44%;
+        background-color: white;
+        box-shadow: 0 3px 15px -2px;
+        height: 90% !important;
+        margin: 10px;
+        height: 40px;
+    }
+
+    .number{
+        padding: 10px;
+        font-size: 45px;
+    }
+    
+    
+}
