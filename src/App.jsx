@@ -39,6 +39,7 @@ const App = () => {
     setUsername('');
     setRole('');
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
   };
 
   return (
@@ -56,7 +57,7 @@ const App = () => {
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
             <Route path="/home" element={<Home username={username} />} />
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
-            <Route path="/multas" element={<Multas />} />
+            <Route path="/multas" element={<Multas username={username} />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
             <Route path="/vehiculos" element={<Vehiculos />} />
             <Route path="/disputas" element={<Disputas />} />
