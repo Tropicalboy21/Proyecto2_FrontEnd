@@ -47,14 +47,14 @@ const Vehiculos = () => {
 
   return (
     <div className='view-container'>
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <div className='w-con' style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
       <h1>Lectura de Placas</h1>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <input
           type="file"
           accept="image/png, image/jpeg"
           onChange={handleFileChange}
-          style={{ marginBottom: '10px', display: 'block' }}
+          style={{ marginBottom: '10px', display: 'block', width: '100%' }}
         />
         <button type="submit" disabled={loading} className='iniciar login'>
           {loading ? 'Procesando...' : 'Subir y Leer Placa'}

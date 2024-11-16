@@ -41,6 +41,10 @@ body {
     background-color: #357ab8;
 }
 
+.saludo{
+    text-align: center;
+}
+
 .dashboard{
     width: 100vw;
     height: 100vh;
@@ -54,8 +58,8 @@ body {
 
 .row {
     display: flex;
-    height: 25%;
-    width: 90%;
+    height: 30%;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     margin: auto;
@@ -89,6 +93,12 @@ body {
     margin: 10px;
     border-radius: 15px;
     transition-duration: .2s;
+    display: flex;
+}
+
+.graph{
+    align-content: center;
+    padding: 20px;
 }
 
 .box-component2:hover{
@@ -102,14 +112,20 @@ body {
 }
 
 .circle{
-    background-color: greenyellow;
+    background-color: rgb(203, 232, 160);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.circle2{
+    background-color: rgb(246, 151, 222);
     padding: 8px;
     border-radius: 50%;
 }
 
 .number{
     padding: 10px;
-    font-size: 75px;
+    font-size: 57px;
 }
 
 
