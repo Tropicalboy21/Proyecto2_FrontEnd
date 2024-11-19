@@ -7,25 +7,20 @@ import Register from './components/Register';
 import ResetPassword from './components/ResetPassword'; 
 import Footer from './components/Footer';
 import Multas from './components/Multas';
-import Navbar from'./components/Navbar';
 import ProtectedLayout from './components/ProtectedLayout';
 import CodeVerification from './components/CodeVerification';
 import CreacionMulta from './components/CreacionMulta';
-import HomeAdmi from './components/HomeAdmi'
+import HomeAdmi from './components/Admin/HomeAdmi';
+import UsuariosAdmin from './components/Admin/UsuariosAdmi';
 import Vehiculos from './components/Vehiculos';
 import Disputas from './components/Disputas'
 
 const App = () => {
   const [username, setUsername] = useState('');
   const [role, setRole] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  // const toggleSidebar = () => {
-  //   setIsSidebarOpen(!isSidebarOpen);
-  // };
-
 
   const handleLoginSuccess = (user) => {
     setUsername(user);
@@ -57,6 +52,7 @@ const App = () => {
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
             <Route path="/home" element={<Home username={username} />} />
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
+            <Route path="/usuariosAdmi" element={<UsuariosAdmin/>} />
             <Route path="/multas" element={<Multas username={username} />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
             <Route path="/vehiculos" element={<Vehiculos />} />

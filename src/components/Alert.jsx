@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css'; 
+import '../assets/styles/app.css';
 
 function Alert({ type, message, onClose }) {
     const alertClass = type === 'success' ? 'alert-success' : 'alert-error';

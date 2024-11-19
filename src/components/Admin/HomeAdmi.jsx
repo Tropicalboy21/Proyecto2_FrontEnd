@@ -1,7 +1,8 @@
 import React from 'react';
-import '../assets/styles/home.css';
+import '../../assets/styles/home.css';
 import PersonIcon from '@mui/icons-material/Person';
 import {LineChart} from '@mui/x-charts/LineChart';
+
 
 function HomeAdmi() {
     return (

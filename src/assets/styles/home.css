@@ -48,9 +48,6 @@ body {
 .dashboard{
     width: 100vw;
     height: 100vh;
-    /* display: flex; */
-    gap: 20px;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     margin-left: 250px;
     padding: 55px;
     align-content: center;

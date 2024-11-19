@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css';
+import '../assets/styles/App.css';
 import { useNavigate, Link } from 'react-router-dom';
 import Alert from '../components/Alert'
 
