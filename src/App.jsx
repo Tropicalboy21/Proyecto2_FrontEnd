@@ -13,7 +13,9 @@ import CreacionMulta from './components/CreacionMulta';
 import HomeAdmi from './components/Admin/HomeAdmi';
 import UsuariosAdmin from './components/Admin/UsuariosAdmi';
 import Vehiculos from './components/Vehiculos';
-import Disputas from './components/Disputas'
+import Disputas from './components/Disputas';
+import Oficial from './components/Oficial';
+
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -47,6 +49,7 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+        
 
           {/* Protected Routes */}
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
@@ -57,6 +60,7 @@ const App = () => {
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
             <Route path="/vehiculos" element={<Vehiculos />} />
             <Route path="/disputas" element={<Disputas />} />
+            <Route path="/oficial" element={<Oficial />} />
           </Route>
 
           {/* Catch-all Route */}
