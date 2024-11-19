@@ -18,7 +18,7 @@ import Disputas from './components/Disputas'
 const App = () => {
   const [username, setUsername] = useState('');
   const [role, setRole] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
