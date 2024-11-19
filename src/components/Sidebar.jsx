@@ -36,7 +36,7 @@ const Sidebar = ({ onLogout }) => {
             </li>
             <li>
               <PersonIcon fontSize="small" sx={{ color: 'white' }} />
-              <Link to="/multas">Usuarios</Link>
+              <Link to="/usuariosAdmi">Usuarios</Link>
             </li>
             <li>
               <FolderIcon fontSize="small" sx={{ color: 'white' }} />

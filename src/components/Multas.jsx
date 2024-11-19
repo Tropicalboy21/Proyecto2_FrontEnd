@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
+import '../assets/styles/app.css';
 import '../assets/styles/multas.css';
 
 const Multas = () => {
@@ -7,6 +7,8 @@ const Multas = () => {
   const [error, setError] = useState(null);
 
   const username = localStorage.getItem('username');
+  
+
   
   useEffect(() => {
     const fetchFines = async () => {

@@ -9,7 +9,9 @@ const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
         return <Navigate to="/login" />;
     }
 
-    const isAdminRoute = location.pathname.startsWith('/homeAdmi');
+    const isAdminRoute = ['/homeAdmi', '/usuariosAdmi'].some(route =>
+        location.pathname.startsWith(route)
+    );
 
     return (
         <div className="protected-layout">

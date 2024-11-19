@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import '../App.css'
-import Alert from '../components/Alert'
+import '../assets/styles/app.css';
+import Alert from '../components/Alert';
 
 const ResetPassword = () => {
   const location = useLocation();
