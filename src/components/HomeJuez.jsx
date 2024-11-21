@@ -11,7 +11,7 @@ const images = [
 
 ];
 
-function Oficial() {
+function Juez() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ function Oficial() {
             <header className="NavBarOficial"></header>
             <main className="content">
                 <div className="intro">
-                    <h1>¡Bienvenido Oficial de Transito!</h1>
+                    <h1>¡Bienvenido Juez!</h1>
 
                     <div className="carousel-container">
                         <div className="carousel">
@@ -61,4 +61,4 @@ function Oficial() {
     );
 }
 
-export default Oficial;
+export default Juez;

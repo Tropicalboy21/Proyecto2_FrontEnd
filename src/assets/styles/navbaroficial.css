@@ -23,7 +23,7 @@
 .more-info {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #4a90e2;
+    background-color: hsl(0, 67%, 45%);
     color: white;
     border: none;
     border-radius: 5px;
@@ -106,7 +106,7 @@
 .create-fines-button {
     padding: 15px 30px;
     font-size: 20px;
-    background-color: #4a90e2;
+    background-color: hsl(0, 67%, 45%);;
     color: white;
     border: none;
     border-radius: 5px;
@@ -116,7 +116,7 @@
 }
 
 .create-fines-button:hover {
-    background-color: #0097a7;
+    background-color: rgba(255, 0, 0, 0.637);
 }
 
 
