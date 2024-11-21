@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/styles/home.css';
+import '../../assets/styles/stylesAdmin/homeAdmin.css';
 import PersonIcon from '@mui/icons-material/Person';
 import {LineChart} from '@mui/x-charts/LineChart';
 

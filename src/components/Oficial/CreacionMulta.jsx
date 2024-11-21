@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import '../assets/styles/app.css';
-import ImagenLogo from '../assets/imgs/logo.png'
-import Alert from '../components/Alert'
+import '../../assets/styles/app.css';
+import ImagenLogo from '../../assets/imgs/logo.png';
+import Alert from '../../components/Alert'
 
 const CreacionMulta = ({username}) =>{
     const [amount, setAmount] = useState('');

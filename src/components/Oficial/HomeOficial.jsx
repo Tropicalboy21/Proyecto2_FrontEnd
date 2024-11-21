@@ -1,6 +1,6 @@
 
-import '../assets/styles/navbaroficial.css'; 
-import '../assets/styles/app.css'; 
+import '../../assets/styles/stylesOficial/navbarOficial.css'; 
+import '../../assets/styles/app.css';
 import React, { useState, useEffect } from 'react';
 
 const images = [

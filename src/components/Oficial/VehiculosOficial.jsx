@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../assets/styles/vehiculos.css';
+import '../../assets/styles/stylesOficial/vehiculosOficial.css';
 
 
 const Vehiculos = () => {

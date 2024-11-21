@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
-import Home from './components/HomeCiudadano';
+import Home from './components/Ciudadano/HomeCiudadano';
 import ForgotPassword from './components/ForgotPassword';
 import Register from './components/Register';
 import ResetPassword from './components/ResetPassword'; 
 import Footer from './components/Footer';
-import Multas from './components/Multas';
+import Multas from './components/Ciudadano/MultasCiudadano';
 import ProtectedLayout from './components/ProtectedLayout';
 import CodeVerification from './components/CodeVerification';
-import CreacionMulta from './components/CreacionMulta';
+import CreacionMulta from './components/Oficial/CreacionMulta';
 import HomeAdmi from './components/Admin/HomeAdmi';
 import UsuariosAdmin from './components/Admin/UsuariosAdmi';
-import Vehiculos from './components/Vehiculos';
-import Disputas from './components/Disputas';
-import Oficial from './components/HomeOficial';
+import Vehiculos from './components/Oficial/VehiculosOficial';
+import Disputas from './components/Ciudadano/Disputas';
+import Oficial from './components/Oficial/HomeOficial';
 
 
 const App = () => {
@@ -58,7 +58,7 @@ const App = () => {
             <Route path="/usuariosAdmi" element={<UsuariosAdmin/>} />
             <Route path="/multas" element={<Multas username={username} />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
-            <Route path="/vehiculos" element={<Vehiculos />} />
+            <Route path="/vehiculosOficial" element={<Vehiculos />} />
             <Route path="/disputas" element={<Disputas />} />
             <Route path="/homeOficial" element={<Oficial />} />
           </Route>
