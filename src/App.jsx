@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
-import Home from './components/Home';
+import Home from './components/HomeCiudadano';
 import ForgotPassword from './components/ForgotPassword';
 import Register from './components/Register';
 import ResetPassword from './components/ResetPassword'; 
@@ -14,7 +14,7 @@ import HomeAdmi from './components/Admin/HomeAdmi';
 import UsuariosAdmin from './components/Admin/UsuariosAdmi';
 import Vehiculos from './components/Vehiculos';
 import Disputas from './components/Disputas';
-import Oficial from './components/Oficial';
+import Oficial from './components/HomeOficial';
 
 
 const App = () => {
@@ -53,14 +53,14 @@ const App = () => {
 
           {/* Protected Routes */}
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
-            <Route path="/home" element={<Home username={username} />} />
+            <Route path="/homeCiudadano" element={<Home username={username} />} />
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
             <Route path="/usuariosAdmi" element={<UsuariosAdmin/>} />
             <Route path="/multas" element={<Multas username={username} />} />
             <Route path="/creacionMulta" element={<CreacionMulta/>} />
             <Route path="/vehiculos" element={<Vehiculos />} />
             <Route path="/disputas" element={<Disputas />} />
-            <Route path="/oficial" element={<Oficial />} />
+            <Route path="/homeOficial" element={<Oficial />} />
           </Route>
 
           {/* Catch-all Route */}
