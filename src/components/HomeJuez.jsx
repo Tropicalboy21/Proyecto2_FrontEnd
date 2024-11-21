@@ -23,7 +23,7 @@ function Juez() {
 
     return (
         <div className="home">
-            <header className="NavBarOficial"></header>
+            <header className="NavBarJuez"></header>
             <main className="content">
                 <div className="intro">
                     <h1>¡Bienvenido Juez!</h1>
@@ -51,9 +51,8 @@ function Juez() {
                     <button className="btn-general">Más Información</button>
                 </div>
                 <section className="intro">
-                    <h2>¿Listo para crear tus multas?</h2>
-                    <h2>Iniciemos...</h2>
-                    <a href="/crear-multas" className="btn-general">Crear Multas</a>
+                    <h2>Lista de acciones pendientes</h2>
+                    <a href="/crear-multas" className="btn-general">Notificaciones</a>
                     </section>
                 <div className="illustration"></div>
             </main>
