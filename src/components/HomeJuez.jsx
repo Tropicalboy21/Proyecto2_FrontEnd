@@ -1,6 +1,6 @@
 
-import '../../assets/styles/stylesOficial/navbarOficial.css'; 
-import '../../assets/styles/app.css';
+import '../assets/styles/navbaroficial.css'; 
+import '../assets/styles/app.css'; 
 import React, { useState, useEffect } from 'react';
 
 const images = [
@@ -11,7 +11,7 @@ const images = [
 
 ];
 
-function Oficial() {
+function Juez() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -23,10 +23,10 @@ function Oficial() {
 
     return (
         <div className="home">
-            <header className="NavBarOficial"></header>
+            <header className="NavBarJuez"></header>
             <main className="content">
                 <div className="intro">
-                    <h1>¡Bienvenido Oficial de Transito!</h1>
+                    <h1>¡Bienvenido Juez!</h1>
 
                     <div className="carousel-container">
                         <div className="carousel">
@@ -51,9 +51,8 @@ function Oficial() {
                     <button className="btn-general">Más Información</button>
                 </div>
                 <section className="intro">
-                    <h2>¿Listo para crear tus multas?</h2>
-                    <h2>Iniciemos...</h2>
-                    <a href="/crear-multas" className="btn-general">Crear Multas</a>
+                    <h2>Lista de acciones pendientes</h2>
+                    <a href="/crear-multas" className="btn-general">Notificaciones</a>
                     </section>
                 <div className="illustration"></div>
             </main>
@@ -61,4 +60,4 @@ function Oficial() {
     );
 }
 
-export default Oficial;
+export default Juez;
