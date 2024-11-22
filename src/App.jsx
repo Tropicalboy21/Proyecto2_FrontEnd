@@ -52,7 +52,7 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-        
+          <Route path="/creacionMulta" element={<CreacionMulta/>} />
 
           {/* Protected Routes */}
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
@@ -60,7 +60,7 @@ const App = () => {
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
             <Route path="/usuariosAdmi" element={<UsuariosAdmin/>} />
             <Route path="/multas" element={<Multas username={username} />} />
-            <Route path="/creacionMulta" element={<CreacionMulta/>} />
+  
             <Route path="/vehiculosOficial" element={<Vehiculos />} />
             <Route path="/disputas" element={<Disputas />} />
             <Route path="/homeOficial" element={<Oficial />} />

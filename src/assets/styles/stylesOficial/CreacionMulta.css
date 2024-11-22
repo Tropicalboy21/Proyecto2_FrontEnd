@@ -1,0 +1,175 @@
+.invoice {
+    width: 5in;
+    max-width: 5in;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.invoice-logo {
+    width: 100px;
+    height: auto;
+    display: block; 
+    margin: 0 auto;
+}
+
+body {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+.invoice-header {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #dedede;
+    background-color: #e8e3e8;
+    color: #D36D6D;
+    border-radius: 10px 10px 0 0;
+}
+
+.invoice-details {
+    padding: 15px;
+}
+.invoice-logo {
+    width: 100px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.privacy-warning {
+    margin-top: 20px; 
+    background-color: #ffefef; 
+    padding: 10px; 
+    border-left: 4px solid #ff4d4d; 
+    color: #b30000; 
+    font-size: 12px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 10px; 
+}
+
+th, td {
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    text-align: left; 
+    font-size: 12px; 
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold; 
+}
+
+.error-message {
+    color: red; 
+    font-size: 12px; 
+}
+
+.signature-section {
+    margin-top: 40px;
+}
+
+.signature-section label {
+    font-weight: bold;
+}
+
+.action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+.action-button button {
+    padding: 10px 20px; 
+    font-size: 14px; 
+    background-color: #d12e54;
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.action-button button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: red;
+    font-size: 10px;
+}
+
+.invoice-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
+    font-size: 12px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+@media print {
+    .invoice {
+        width: 4in;
+        height: auto;
+        margin: 0 auto;
+        box-shadow: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-group {
+        margin-bottom: 5px;
+    }
+
+    th, td {
+        padding: 5px;
+        font-size: 10px;
+    }
+}

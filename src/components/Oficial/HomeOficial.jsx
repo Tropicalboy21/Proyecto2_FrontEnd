@@ -2,6 +2,7 @@
 // import '../../assets/styles/stylesOficial/oficial.css';
 import React, { useState, useEffect } from 'react';
 
+
 const images = [
     'src/assets/imgs/img1.jpg',
     'src/assets/imgs/img2.jpg',
@@ -50,7 +51,7 @@ function Oficial() {
                 <section className="intro">
                     <h2>¿Listo para crear tus multas?</h2>
                     <h2>Iniciemos...</h2>
-                    <a href="/crear-multas" className="btn-general">Crear Multas</a>
+                    <a href="/CreacionMulta" className="btn-general">Crear Multas</a>
                     </section>
                 <div className="illustration"></div>
             </main>
