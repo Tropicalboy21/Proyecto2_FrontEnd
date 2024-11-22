@@ -11,16 +11,19 @@ const NavBarOficial = ({ username, onLogout }) => {
           <button className="nav-button">INICIO</button>
         </Link>
         <Link to="/multas">
-          <button className="nav-button">Registrar MULTAS</button>
+          <button className="nav-button">MULTAS</button>
         </Link>
         <Link to="/vehiculos">
           <button className="nav-button">VEHICULOS</button>
         </Link>
         <Link to="/disputas">
-          <button className="nav-button">Reglamentos</button>
+          <button className="nav-button">REGLAMENTO</button>
         </Link>
         <Link to="/notificaciones">
-          <button className="nav-button">Notificaciones</button>
+          <button className="nav-button">NOTIFICACIONES</button>
+        </Link>
+        <Link to="/mapa">
+          <button className="nav-button">MAPA</button>
         </Link>
         {/* <Link to="/historial">
           <button className="nav-button">HISTORIAL</button>
