@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 2rem 2rem;
+    background: linear-gradient(to right, #f0f4ff, #d9e4ff);
+    min-height: 100vh;
+}
+
+.intro {
+    max-width: 50%;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.intro p {
+    color: #666;
+    margin: 1rem 0;
+}
+
+.more-info {
+    background-color: #4a90e2;
+    color: rgb(233, 225, 225);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.more-info:hover {
+    background-color: #357ab8;
+}
+
+.saludo{
+    text-align: center;
+}
+
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    margin-left: 250px;
+    padding: 55px;
+    align-content: center;
+}
+
+.row {
+    display: flex;
+    height: 30%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    align-content: center;
+    max-width: 856px;
+}
+
+.box-component{
+    width: 45%;
+    background-color: white;
+    box-shadow: 0 3px 15px -2px;
+    height: 90% !important;
+    margin: 10px;
+    height: 40px;
+    border-radius: 15px;
+    transition-duration: .2s;
+    padding: 10px;
+}
+
+.box-component:hover{
+    transform: scale(1.1);
+}
+
+
+
+.box-component2{
+    width: 93%;
+    background-color: white;
+    box-shadow: 0 3px 15px -2px;
+    height: 90%;
+    margin: 10px;
+    border-radius: 15px;
+    transition-duration: .2s;
+    display: flex;
+}
+
+.graph{
+    align-content: center;
+    padding: 20px;
+}
+
+.box-component2:hover{
+    transform: scale(1.1);
+}
+
+.component-head{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.circle{
+    background-color: rgb(203, 232, 160);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.circle2{
+    background-color: rgb(246, 151, 222);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.number{
+    padding: 10px;
+    font-size: 57px;
+}
+
+
+@media (max-width: 768px) {
+    .dashboard {
+        margin-left: 0;
+    }
+
+    .dashboard{
+        padding: 0;
+    }
+    
+    .box-component{
+        width: 44%;
+        background-color: white;
+        box-shadow: 0 3px 15px -2px;
+        height: 90% !important;
+        margin: 10px;
+        height: 40px;
+    }
+
+    .number{
+        padding: 10px;
+        font-size: 45px;
+    }
+    
+    
+}

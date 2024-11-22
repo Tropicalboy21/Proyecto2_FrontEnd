@@ -1,6 +1,6 @@
 import React from 'react';
-import '../assets/styles/home.css'; 
-import '../assets/styles/app.css'; 
+import '../../assets/styles/stylesCiudadanos/homeCiudadano.css';
+
 
 function Home() {
     return (

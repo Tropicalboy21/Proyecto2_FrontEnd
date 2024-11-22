@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/styles/app.css';
-import '../assets/styles/multas.css';
+import '../../assets/styles/app.css';
+import '../../assets/styles/stylesCiudadanos/multasCiudadano.css';
 
 const Multas = () => {
   const [fines, setFines] = useState([]);

@@ -456,3 +456,19 @@ input:focus-visible {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.btn-general {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: hsl(0, 67%, 45%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-general:hover {
+    background-color: hsl(0, 67%, 40%);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar'
+import Navbar from './Ciudadano/NavbarCiudadano';
+import Sidebar from './Admin/Sidebar'
 
 const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
    // Redirect to login if not logged in

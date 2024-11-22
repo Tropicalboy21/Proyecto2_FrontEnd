@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../assets/styles/navbar.css';
+import '../assets/styles/navbarOficial.css';
 
-const Navbar = ({ username, onLogout }) => {
+const NavBarOficial = ({ username, onLogout }) => {
   return (
     <header className="header">
       <div className="logo"> </div>
@@ -11,13 +11,16 @@ const Navbar = ({ username, onLogout }) => {
           <button className="nav-button">INICIO</button>
         </Link>
         <Link to="/multas">
-          <button className="nav-button">MULTAS</button>
+          <button className="nav-button">Registrar MULTAS</button>
         </Link>
         <Link to="/vehiculos">
           <button className="nav-button">VEHICULOS</button>
         </Link>
         <Link to="/disputas">
-          <button className="nav-button">DISPUTAS</button>
+          <button className="nav-button">Reglamentos</button>
+        </Link>
+        <Link to="/notificaciones">
+          <button className="nav-button">Notificaciones</button>
         </Link>
         {/* <Link to="/historial">
           <button className="nav-button">HISTORIAL</button>
@@ -32,4 +35,4 @@ const Navbar = ({ username, onLogout }) => {
   );
 }
 
-export default Navbar;
+export default NavBarOficial;
