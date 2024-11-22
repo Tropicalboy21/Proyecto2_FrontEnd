@@ -15,8 +15,8 @@ import UsuariosAdmin from './components/Admin/UsuariosAdmi';
 import Vehiculos from './components/Oficial/VehiculosOficial';
 import Disputas from './components/Ciudadano/Disputas';
 import Oficial from './components/Oficial/HomeOficial';
-import HomeJuez from './components/Juez/HomeJuez';
 import Juez from './components/Juez/HomeJuez';
+import Mapa from  './components/Mapa'
 
 
 
@@ -65,6 +65,7 @@ const App = () => {
             <Route path="/disputas" element={<Disputas />} />
             <Route path="/homeOficial" element={<Oficial />} />
             <Route path="/homeJuez" element={<Juez />} />
+            <Route path="/mapa" element={<Mapa />} />
           </Route>
 
           {/* Catch-all Route */}

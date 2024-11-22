@@ -22,9 +22,10 @@ const Navbar = ({ username, onLogout }) => {
         {/* <Link to="/historial">
           <button className="nav-button">HISTORIAL</button>
         </Link>
+        */}
         <Link to="/mapa">
           <button className="nav-button">MAPA</button>
-        </Link> */}
+        </Link>
       </nav>
       <button className="nav-button" onClick={onLogout}>Salir</button>
 
