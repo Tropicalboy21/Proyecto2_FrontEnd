@@ -1,7 +1,9 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import Navbar from './Ciudadano/NavbarCiudadano';
-import Sidebar from './Admin/Sidebar'
+import Sidebar from './Admin/Sidebar';
+import NavbarOficial from './Oficial/NavbarOficial';
+import NavbarJuez from './Juez/NavBarJuez';
 
 const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
    // Redirect to login if not logged in
@@ -13,10 +15,23 @@ const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
         location.pathname.startsWith(route)
     );
 
+    const isOficialRoute = ['/homeOficial', '/creacionMulta'].some(route =>
+        location.pathname.startsWith(route)
+    );
+
+    const isJuezRoute = ['/homeJuez'].some(route =>
+        location.pathname.startsWith(route)
+    );
+
+
     return (
         <div className="protected-layout">
             {isAdminRoute ? (
             <Sidebar onLogout={onLogout} />
+            ) : isOficialRoute? (
+            <NavbarOficial onLogout={onLogout} />
+            ) : isJuezRoute? (
+                <NavbarJuez onLogout={onLogout} />
             ) : (
             <Navbar onLogout={onLogout} />
         )}

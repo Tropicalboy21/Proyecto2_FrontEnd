@@ -1,6 +1,5 @@
-
-import '../../assets/styles/stylesOficial/navbarOficial.css'; 
-import '../../assets/styles/app.css';
+// import '../../assets/styles/app.css';
+// import '../../assets/styles/stylesOficial/oficial.css';
 import React, { useState, useEffect } from 'react';
 
 const images = [
@@ -8,7 +7,6 @@ const images = [
     'src/assets/imgs/img2.jpg',
     'src/assets/imgs/img3.png',
     'src/assets/imgs/img4.png',
-
 ];
 
 function Oficial() {
@@ -23,7 +21,6 @@ function Oficial() {
 
     return (
         <div className="home">
-            <header className="NavBarOficial"></header>
             <main className="content">
                 <div className="intro">
                     <h1>¡Bienvenido Oficial de Transito!</h1>

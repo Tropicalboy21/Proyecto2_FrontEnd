@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../assets/styles/navbarOficial.css';
+import '../../assets/styles/stylesOficial/navbarOficial.css';
 
 const NavBarOficial = ({ username, onLogout }) => {
   return (
