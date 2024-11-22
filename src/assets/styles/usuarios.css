@@ -7,7 +7,7 @@
 
 .view-port{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     margin-left: 250px;
     padding: 55px;
     align-content: center;
@@ -24,6 +24,8 @@
     max-width: 856px;
     box-shadow: 0 3px 15px -2px;
     border-radius: 15px;
+    min-height: 658.188px;
+    max-height: 658.188px;
 }
 
 .component-head{
@@ -192,24 +194,20 @@ h3{
         margin-left: 0;
         padding: 0;
         width: 90%;
-        margin-top: 60px;
-        overflow-x: hidden;
+        margin: auto;
     }
     .component-head{
-        position: fixed;
+
         background-color: white;
     }
 
     .tab-content{
-        margin-top: 50px;
         display: flex;
         justify-content: center;
-
     }
 
     .register-sct{
         height: auto;
-        box-shadow: none;
     }
     
     .imagen {

@@ -15,7 +15,7 @@ body{
 }
 
 #root{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center
@@ -286,7 +286,7 @@ input:focus-visible {
 
 .view-container{
     width: 100vw;
-    height: 95.6vh;
+    min-height: 95.3vh;
     display: flex;
     justify-content: center;
     align-items: center;
