@@ -31,7 +31,7 @@ const HeatMap = () => {
   }, []);
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyD5WN0TQQOrddvDKS0h9x7pKhc9kk4Y6Xg">
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}

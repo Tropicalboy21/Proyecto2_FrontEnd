@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
-import Home from './components/Ciudadano/HomeCiudadano';
+import HomeCiudadano from './components/Ciudadano/HomeCiudadano';
 import ForgotPassword from './components/ForgotPassword';
 import Register from './components/Register';
 import ResetPassword from './components/ResetPassword'; 
 import Footer from './components/Footer';
-import Multas from './components/Ciudadano/MultasCiudadano';
+import MultasCiudadano from './components/Ciudadano/MultasCiudadano';
 import ProtectedLayout from './components/ProtectedLayout';
 import CodeVerification from './components/CodeVerification';
 import CreacionMulta from './components/Oficial/CreacionMulta';
 import HomeAdmi from './components/Admin/HomeAdmi';
 import UsuariosAdmin from './components/Admin/UsuariosAdmi';
-import Vehiculos from './components/Oficial/VehiculosOficial';
-import Disputas from './components/Ciudadano/Disputas';
-import Oficial from './components/Oficial/HomeOficial';
-import Juez from './components/Juez/HomeJuez';
-import Mapa from  './components/Mapa'
+import VehiculosOficial from './components/Oficial/VehiculosOficial';
+import DisputasCiudadano from './components/Ciudadano/DisputasCiudadano';
+import HomeOficial from './components/Oficial/HomeOficial';
+import HomeJuez from './components/Juez/HomeJuez';
+import Mapa from  './components/Mapa';
+import VehiculosCiudadano from './components/Ciudadano/VehiculosCiudadano';
 
 
 
@@ -56,15 +57,16 @@ const App = () => {
 
           {/* Protected Routes */}
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
-            <Route path="/homeCiudadano" element={<Home username={username} />} />
+            <Route path="/homeCiudadano" element={<HomeCiudadano username={username} />} />
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
             <Route path="/usuariosAdmi" element={<UsuariosAdmin/>} />
-            <Route path="/multas" element={<Multas username={username} />} />
+            <Route path="/multasCiudadano" element={<MultasCiudadano username={username} />} />
   
-            <Route path="/vehiculosOficial" element={<Vehiculos />} />
-            <Route path="/disputas" element={<Disputas />} />
-            <Route path="/homeOficial" element={<Oficial />} />
-            <Route path="/homeJuez" element={<Juez />} />
+            <Route path="/vehiculosOficial" element={<VehiculosOficial />} />
+            <Route path="/vehiculosCiudadano" element={<VehiculosCiudadano />} />
+            <Route path="/disputasCiudadano" element={<DisputasCiudadano />} />
+            <Route path="/homeOficial" element={<HomeOficial />} />
+            <Route path="/homeJuez" element={<HomeJuez />} />
             <Route path="/mapa" element={<Mapa />} />
           </Route>
 
