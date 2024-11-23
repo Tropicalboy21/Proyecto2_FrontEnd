@@ -21,26 +21,6 @@ body{
     align-items: center
 }
 
-/* .app-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    transition: margin-left 0.3s ease;
-  }
-  
-  .sidebar-open {
-    margin-left: 250px;
-  }
-  
-  .sidebar-closed {
-    margin-left: 60px;
-  }
-
- */
 
 .padre { 
     max-width: 360px;

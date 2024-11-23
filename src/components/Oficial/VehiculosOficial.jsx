@@ -2,22 +2,32 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../../assets/styles/stylesOficial/vehiculosOficial.css';
 
-
-const Vehiculos = () => {
+const VehiculosOficial = () => {
+  // Estados para la Lectura de Placas
   const [selectedFile, setSelectedFile] = useState(null);
   const [resultText, setResultText] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Manejar cambio de archivo
+  // Estados para el Registro y Consulta de Vehículos
+  const [registro, setRegistro] = useState({
+    NumeroMotor: '',
+    CantidadPuertas: '',
+    Color: '',
+    NumeroPlaca: '',
+    TipoVehiculo: '',
+  });
+  const [consulta, setConsulta] = useState('');
+  const [vehiculoInfo, setVehiculoInfo] = useState(null);
+
+  // Manejo de eventos para la Lectura de Placas
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
-    setResultText(''); // Limpia el resultado previo
-    setError(null); // Limpia errores previos
+    setResultText('');
+    setError(null);
   };
 
-  // Enviar archivo al backend
-  const handleSubmit = async (e) => {
+  const handleSubmitLectura = async (e) => {
     e.preventDefault();
 
     if (!selectedFile) {
@@ -32,12 +42,14 @@ const Vehiculos = () => {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post('https://localhost:7289/api/lecturaplaca', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      setResultText(response.data); 
+      const response = await axios.post(
+        'https://localhost:7289/api/lecturaplaca',
+        formData,
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        }
+      );
+      setResultText(response.data);
     } catch (err) {
       setError('Error al procesar la imagen. Por favor intenta nuevamente.');
     } finally {
@@ -45,33 +57,154 @@ const Vehiculos = () => {
     }
   };
 
+  // Manejo de eventos para el Registro de Vehículos
+  const handleChangeRegistro = (e) => {
+    const { name, value } = e.target;
+    setRegistro({ ...registro, [name]: value });
+  };
+
+  const handleRegistrar = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('https://localhost:7289/api/Vehiculos', registro);
+      alert('Vehículo registrado con éxito');
+      setRegistro({
+        NumeroMotor: '',
+        CantidadPuertas: '',
+        Color: '',
+        NumeroPlaca: '',
+        TipoVehiculo: '',
+      });
+    } catch (error) {
+      alert('Hubo un error al registrar el vehículo');
+    }
+  };
+
+  // Manejo de eventos para la Consulta de Vehículos
+  const handleConsultar = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get(
+        `https://localhost:7289/api/Vehiculos/${consulta}`
+      );
+      setVehiculoInfo(response.data);
+    } catch (error) {
+      alert('Vehículo no encontrado');
+    }
+  };
+
   return (
-    <div className='view-container'>
-    <div className='w-con' style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h1>Lectura de Placas</h1>
-      <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
-        <input
-          type="file"
-          accept="image/png, image/jpeg"
-          onChange={handleFileChange}
-          style={{ marginBottom: '10px', display: 'block', width: '100%' }}
-        />
-        <button type="submit" disabled={loading} className='iniciar login'>
-          {loading ? 'Procesando...' : 'Subir y Leer Placa'}
-        </button>
-      </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {resultText && (
-        <div>
-          <h2>Numero de Placa:</h2>
-          <p style={{ whiteSpace: 'pre-wrap', backgroundColor: '#f4f4f4', padding: '10px', borderRadius: '5px' }}>
-            {resultText}
-          </p>
-        </div>
-      )}
-    </div>
+    <div className="container">
+      {/* Columna 1: Lectura de Placas */}
+      <div className="cardPlaca">
+        <h2>Lectura de Placas</h2>
+        <form onSubmit={handleSubmitLectura}>
+          <input
+            type="file"
+            accept="image/png, image/jpeg"
+            onChange={handleFileChange}
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? 'Procesando...' : 'Subir y Leer Placa'}
+          </button>
+        </form>
+        {error && <p className="result-error">{error}</p>}
+        {resultText && (
+          <div className="result-section">
+            <h3>Resultado:</h3>
+            <p>{resultText}</p>
+          </div>
+        )}
+      </div>
+
+      {/* Columna 2: Registro de Vehículos */}
+      <div className="cardRegistro">
+        <h2>Registro de Vehículos</h2>
+        <form onSubmit={handleRegistrar}>
+          <label>Número de Motor</label>
+          <input
+            type="text"
+            name="NumeroMotor"
+            value={registro.NumeroMotor}
+            onChange={handleChangeRegistro}
+            required
+          />
+          <label>Cantidad de Puertas</label>
+          <input
+            type="number"
+            name="CantidadPuertas"
+            value={registro.CantidadPuertas}
+            onChange={handleChangeRegistro}
+            required
+          />
+          <label>Color</label>
+          <input
+            type="text"
+            name="Color"
+            value={registro.Color}
+            onChange={handleChangeRegistro}
+            required
+          />
+          <label>Número de Placa</label>
+          <input
+            type="text"
+            name="NumeroPlaca"
+            value={registro.NumeroPlaca}
+            onChange={handleChangeRegistro}
+            required
+          />
+          <label>Tipo de Vehículo</label>
+          <input
+            type="text"
+            name="TipoVehiculo"
+            value={registro.TipoVehiculo}
+            onChange={handleChangeRegistro}
+            required
+          />
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+
+      {/* Columna 3: Consulta de Vehículos */}
+      <div className="cardConsulta">
+        <h2>Consulta de Vehículos</h2>
+        <form onSubmit={handleConsultar}>
+          <label>Número de Placa</label>
+          <input
+            type="text"
+            value={consulta}
+            onChange={(e) => setConsulta(e.target.value)}
+            required
+          />
+          <button type="submit">Consultar</button>
+        </form>
+        {vehiculoInfo && (
+          <div className="wrapper">
+            <h3>Información del Vehículo</h3>
+            <p>
+              <strong>Número de Motor:</strong>{' '}
+              {vehiculoInfo.numeroMotor || 'No disponible'}
+            </p>
+            <p>
+              <strong>Cantidad de Puertas:</strong>{' '}
+              {vehiculoInfo.cantidadPuertas || 'No disponible'}
+            </p>
+            <p>
+              <strong>Color:</strong> {vehiculoInfo.color || 'No disponible'}
+            </p>
+            <p>
+              <strong>Número de Placa:</strong>{' '}
+              {vehiculoInfo.numeroPlaca || 'No disponible'}
+            </p>
+            <p>
+              <strong>Tipo de Vehículo:</strong>{' '}
+              {vehiculoInfo.tipoVehiculo || 'No disponible'}
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default Vehiculos;
+export default VehiculosOficial;

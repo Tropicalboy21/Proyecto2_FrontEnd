@@ -1,85 +1,138 @@
-/* Container for Vehiculos page */
+/* Contenedor principal con 3 columnas */
 .container {
-    padding: 2rem;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Section to upload image */
-  .upload-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .upload-section input {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .upload-section button {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .upload-section button:hover {
-    background-color: rgba(255, 0, 0, 0.637);
-  }
-  
-  /* Error message styling */
-  .result-error {
-    margin-top: 20px;
-    color: red;
-    font-weight: bold;
-  }
-  
-  /* Result message styling */
-  .result-section {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  /* Back button */
-  .back-button {
-    background-color: transparent;
-    color: rgb(252, 252, 252);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    transition: background-color 0.3s;
-  }
-  
-  .back-button:hover {
-    background-color: rgba(255, 0, 0, 0.637);
-  }
-  
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 20px; 
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px; 
+  background-color: #f4f4f4; 
+  min-height: 100vh; 
+  box-sizing: border-box; 
+}
 
-  .w-con{
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 3px 15px -2px;
-    border-radius: 15px;
+/* Estilo general de las columnas */
+.cardPlaca {
+  flex: 1 1 calc(33.33% - 20px); /
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  min-height: 750px;
+  max-width: 360px; 
+  min-width: 300px; 
+  box-sizing: border-box; 
+  height: auto;
+}
+.cardRegistro {
+  flex: 1 1 calc(33.33% - 20px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  min-height: 750px;
+  max-width: 360px; 
+  min-width: 300px; 
+  box-sizing: border-box; 
+  height: auto;
+}
+.cardConsulta {
+  flex: 1 1 calc(33.33% - 20px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  min-height: 750px;
+  max-width: 360px; 
+  min-width: 300px; 
+  box-sizing: border-box; 
+  height: auto;
+}
+
+/* Títulos de las columnas */
+.card h2 {
+  font-family: 'fontLastica', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilos de formularios */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  outline: none;
+  width: 100%;
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background-color: #c0392b;
+}
+
+/* Estilo específico para mensajes */
+.wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.result-error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.result-section {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Las columnas ocupan el ancho completo */
+    max-width: 100%; /* Asegura que no excedan el ancho del contenedor */
   }
+}
