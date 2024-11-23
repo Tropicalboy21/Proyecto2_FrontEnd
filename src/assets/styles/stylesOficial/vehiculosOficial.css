@@ -100,6 +100,11 @@ form button:hover {
   text-align: center;
 }
 
+.error-text {
+  color: red;
+  font-size: 0.9em;
+}
+
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
   .card {

@@ -11,22 +11,45 @@ const VehiculosCiudadano = () => {
     TipoVehiculo: "",
   });
 
+  const [registroErrores, setRegistroErrores] = useState({});
   const [consulta, setConsulta] = useState("");
+  const [consultaError, setConsultaError] = useState("");
   const [vehiculoInfo, setVehiculoInfo] = useState(null);
+
+  // Estados para la alerta
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleChangeRegistro = (e) => {
     const { name, value } = e.target;
     setRegistro({ ...registro, [name]: value });
+    setRegistroErrores({ ...registroErrores, [name]: '' });
   };
 
   const handleRegistrar = async (e) => {
     e.preventDefault();
+
+    const errores = {};
+    Object.keys(registro).forEach((campo) => {
+      if (!registro[campo]) {
+        errores[campo] = 'Favor llenar este campo';
+      }
+    });
+
+    if (Object.keys(errores).length > 0) {
+      setRegistroErrores(errores);
+      return;
+    }
+
     try {
-      const response = await axios.post(
+      await axios.post(
         "https://localhost:7289/api/Vehiculos",
         registro
       );
-      alert("Vehículo registrado con éxito");
+      setAlertType('success');
+      setAlertMessage('Vehículo registrado exitosamente');
+      setShowAlert(true);
       setRegistro({
         NumeroMotor: "",
         CantidadPuertas: "",
@@ -34,29 +57,63 @@ const VehiculosCiudadano = () => {
         NumeroPlaca: "",
         TipoVehiculo: "",
       });
+      setRegistroErrores({});
     } catch (error) {
-      console.error(error);
-      alert("Hubo un error al registrar el vehículo");
+      setAlertType('error');
+      setAlertMessage('Error: Vehículo no registrado');
+      setShowAlert(true);
     }
   };
 
   const handleConsultar = async (e) => {
     e.preventDefault();
+  
+    if (!consulta) {
+      setConsultaError("Favor llenar este campo");
+      return;
+    }
+  
     try {
       const response = await axios.get(
         `https://localhost:7289/api/Vehiculos/${consulta}`
       );
-      console.log("Respuesta del servidor:", response.data); // Depuración
-      setVehiculoInfo(response.data);
+  
+      // Validamos si la respuesta contiene datos
+      if (response.data && Object.keys(response.data).length > 0) {
+        setVehiculoInfo(response.data); // Asignamos los datos al estado
+        setConsultaError("");
+        setAlertType('success');
+        setAlertMessage('Vehículo encontrado');
+        setShowAlert(true);
+      } else {
+        throw new Error("Vehículo no encontrado");
+      }
     } catch (error) {
       console.error("Error en la consulta:", error);
-      alert("Vehículo no encontrado");
+      setVehiculoInfo(null); // Limpiamos la información previa
+      setAlertType('error');
+      setAlertMessage('Vehículo no encontrado');
+      setShowAlert(true);
     }
   };
   
 
   return (
     <div className="container">
+      {/* Alerta */}
+      {showAlert && (
+        <>
+          <div className="overlay" onClick={() => setShowAlert(false)}></div>
+          <div className={`alert-container`}>
+            <div className={`alert-box alert-${alertType}`}>
+              <div className={`icon icon-${alertType}`}></div>
+              <p>{alertMessage}</p>
+              <button onClick={() => setShowAlert(false)}>Cerrar</button>
+            </div>
+          </div>
+        </>
+      )}
+
       {/* Columna de Registro */}
       <div className="cardRegistro">
         <h2>Registrar Vehículo</h2>
@@ -67,40 +124,50 @@ const VehiculosCiudadano = () => {
             name="NumeroMotor"
             value={registro.NumeroMotor}
             onChange={handleChangeRegistro}
-            required
           />
+          {registroErrores.NumeroMotor && (
+            <p className="error-text">{registroErrores.NumeroMotor}</p>
+          )}
           <label>Cantidad de Puertas</label>
           <input
             type="number"
             name="CantidadPuertas"
             value={registro.CantidadPuertas}
             onChange={handleChangeRegistro}
-            required
           />
+          {registroErrores.CantidadPuertas && (
+            <p className="error-text">{registroErrores.CantidadPuertas}</p>
+          )}
           <label>Color</label>
           <input
             type="text"
             name="Color"
             value={registro.Color}
             onChange={handleChangeRegistro}
-            required
           />
+          {registroErrores.Color && (
+            <p className="error-text">{registroErrores.Color}</p>
+          )}
           <label>Número de Placa</label>
           <input
             type="text"
             name="NumeroPlaca"
             value={registro.NumeroPlaca}
             onChange={handleChangeRegistro}
-            required
           />
+          {registroErrores.NumeroPlaca && (
+            <p className="error-text">{registroErrores.NumeroPlaca}</p>
+          )}
           <label>Tipo de Vehículo</label>
           <input
             type="text"
             name="TipoVehiculo"
             value={registro.TipoVehiculo}
             onChange={handleChangeRegistro}
-            required
           />
+          {registroErrores.TipoVehiculo && (
+            <p className="error-text">{registroErrores.TipoVehiculo}</p>
+          )}
           <button type="submit">Registrar</button>
         </form>
       </div>
@@ -113,22 +180,24 @@ const VehiculosCiudadano = () => {
           <input
             type="text"
             value={consulta}
-            onChange={(e) => setConsulta(e.target.value)}
-            required
+            onChange={(e) => {
+              setConsulta(e.target.value);
+              setConsultaError("");
+            }}
           />
+          {consultaError && <p className="error-text">{consultaError}</p>}
           <button type="submit">Consultar</button>
         </form>
         {vehiculoInfo && (
-  <div className="wrapper">
-    <h3>Información del Vehículo</h3>
-    <p><strong>Número de Motor:</strong> {vehiculoInfo.numeroMotor || "No disponible"}</p>
-    <p><strong>Cantidad de Puertas:</strong> {vehiculoInfo.cantidadPuertas || "No disponible"}</p>
-    <p><strong>Color:</strong> {vehiculoInfo.color || "No disponible"}</p>
-    <p><strong>Número de Placa:</strong> {vehiculoInfo.numeroPlaca || "No disponible"}</p>
-    <p><strong>Tipo de Vehículo:</strong> {vehiculoInfo.tipoVehiculo || "No disponible"}</p>
-  </div>
-)}
-
+          <div className="wrapper">
+            <h3>Información del Vehículo</h3>
+            <p><strong>Número de Motor:</strong> {vehiculoInfo.numeroMotor || "No disponible"}</p>
+            <p><strong>Cantidad de Puertas:</strong> {vehiculoInfo.cantidadPuertas || "No disponible"}</p>
+            <p><strong>Color:</strong> {vehiculoInfo.color || "No disponible"}</p>
+            <p><strong>Número de Placa:</strong> {vehiculoInfo.numeroPlaca || "No disponible"}</p>
+            <p><strong>Tipo de Vehículo:</strong> {vehiculoInfo.tipoVehiculo || "No disponible"}</p>
+          </div>
+        )}
       </div>
     </div>
   );
