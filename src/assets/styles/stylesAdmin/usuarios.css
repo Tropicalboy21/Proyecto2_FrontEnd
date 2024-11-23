@@ -34,22 +34,47 @@
     align-items: center;
     height: 30px; 
     width: 90%;
-    margin: 15px auto;
+    margin: 9px auto;
+    height: 100%;
 }
 
-.component-head a{
+
+.component-head .tab {
     margin-right: 15px;
     text-decoration: none;
-    color: hsl(0, 67%, 45%);
+    color: #7e7e7e;
     font-weight: 600;
+    padding: 10px 15px;
+    position: relative;
+    cursor: pointer;
 }
 
-.component-head a:hover{
-    margin-right: 15px;
-    text-decoration: underline;
+.component-head .tab::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: hsl(0, 67%, 45%);
+    width: 0%;
+    content: "";
+    height: 2px;
+    transition: all 0.5s;
+}
+
+.component-head .tab:hover{
     color: hsl(0, 67%, 45%);
 }
 
+.component-head .tab:hover::after,
+.component-head .tab.active::after {
+    width: 100%;
+    color: hsl(0, 67%, 45%);
+}
+
+.component-head .tab.active {
+    color: hsl(0, 67%, 45%);
+}
 
 .circle{
     background-color: rgb(203, 232, 160);
@@ -85,7 +110,9 @@
 
 .tab-content{
     display: flex;
+    width: 100%;
     border-radius: 0 0 15px 15px ;
+    height: 597px;
 }
 
 .imagen {
@@ -175,6 +202,10 @@ input:focus-visible {
 }
 
 input[type='radio']{
+    accent-color:  hsl(0, 67%, 45%);
+}
+
+.radio-inline.selected {
     accent-color:  hsl(0, 67%, 45%);
 }
 
