@@ -14,38 +14,8 @@
 }
 
 /* Estilo general de las columnas */
-.cardPlaca {
+.card {
   flex: 1 1 calc(33.33% - 20px); /
-  flex-direction: column;
-  align-items: center;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  padding: 25px;
-  min-height: 750px;
-  max-width: 360px; 
-  min-width: 300px; 
-  box-sizing: border-box; 
-  height: auto;
-}
-.cardRegistro {
-  flex: 1 1 calc(33.33% - 20px); 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  padding: 25px;
-  min-height: 750px;
-  max-width: 360px; 
-  min-width: 300px; 
-  box-sizing: border-box; 
-  height: auto;
-}
-.cardConsulta {
-  flex: 1 1 calc(33.33% - 20px); 
-  display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
@@ -67,6 +37,7 @@
   color: #333;
   margin-bottom: 20px;
   text-align: center;
+  
 }
 
 /* Estilos de formularios */

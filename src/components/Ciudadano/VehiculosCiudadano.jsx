@@ -58,7 +58,7 @@ const VehiculosCiudadano = () => {
   return (
     <div className="container">
       {/* Columna de Registro */}
-      <div className="card">
+      <div className="cardRegistro">
         <h2>Registrar Vehículo</h2>
         <form onSubmit={handleRegistrar}>
           <label>Número de Motor</label>
@@ -106,7 +106,7 @@ const VehiculosCiudadano = () => {
       </div>
 
       {/* Columna de Consulta */}
-      <div className="card">
+      <div className="cardConsulta">
         <h2>Consultar Vehículo</h2>
         <form onSubmit={handleConsultar}>
           <label>Número de Placa</label>
