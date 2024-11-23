@@ -7,16 +7,16 @@ const Navbar = ({ username, onLogout }) => {
     <header className="header">
       <div className="logo"> </div>
       <nav className="nav">
-        <Link to="/home">
+        <Link to="/homeCiudadano">
           <button className="nav-button">INICIO</button>
         </Link>
-        <Link to="/multas">
+        <Link to="/multasCiudadano">
           <button className="nav-button">MULTAS</button>
         </Link>
-        <Link to="/vehiculos">
+        <Link to="/vehiculosCiudadano">
           <button className="nav-button">VEHICULOS</button>
         </Link>
-        <Link to="/disputas">
+        <Link to="/disputasCiudadano">
           <button className="nav-button">DISPUTAS</button>
         </Link>
         {/* <Link to="/historial">

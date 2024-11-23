@@ -133,50 +133,23 @@ const CreacionMulta = ({ username }) => {
   const totalFormatted = montoMulta.toFixed(2);
 
   const crearFacturaPDF = () => {
-    if (!validateIdentification(inspector)) {
-      setError('Debe ingresar una identificación válida (0-0000-0000).');
-      return;
-    }
+    if (!handleValidations()) return;
 
-    if (!placaVehiculo) {
-      setError('Debe ingresar una placa válida.');
-      return;
-    }
-
-    if (codigoInfraccion.length === 0) {
-      setError('Debe seleccionar al menos un código de infracción.');
-      return;
-    }
-
-    setError(''); 
-
-    const doc = new jsPDF();
-
-    doc.setFont("Arial", "bold", 12);
-    doc.text("Factura de Multa", 20, 10);
-
-    doc.setFont("Arial", "normal", 10);
-    doc.text(`Id Multa: ${multaId}`, 20, 20);
-    doc.text(`No Boleta: ${boletaNum}`, 20, 30);
-    doc.text(`Fecha de la infracción: ${fechaInfraccion}`, 20, 40);
-    doc.text(`Hora de la infracción: ${horaInfraccion}`, 20, 50);
-    doc.text(`Identificación del Oficial: ${inspector}`, 20, 60);
-    doc.text(`Placa del Vehículo: ${placaVehiculo}`, 20, 70);
-
-    const tableColumn = ["Código de Infracción", "Monto"];
-    const tableRows = codigoInfraccion.map(tipo => [tipo, multas[tipo].toFixed(2)]);
-
-    doc.autoTable(tableColumn, tableRows, { startY: 80 });
-
+    const invoice = document.querySelector('.invoice'); 
     
-    const totalFormatted = montoMulta.toFixed(2);
-    doc.text(`Monto Total: ${totalFormatted}`, 20, doc.lastAutoTable.finalY + 10);
-    doc.save("factura_multa.pdf");
+    html2canvas(invoice, { scale: 2 }).then((canvas) => {
 
+      const imgData = canvas.toDataURL('image/png');
+
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
   
-    setAlertMessage('Factura generada con éxito.');
-    setAlertType('success');
-    setShowAlert(true);
+      pdf.save('factura_multa.pdf');
+    });
   };
 
 
@@ -318,14 +291,20 @@ const CreacionMulta = ({ username }) => {
         <label>Firma del Infractor</label>
         <input type="text" placeholder="Nombre del infractor" />
       </div>
-      <div className="action-button">
-        <button onClick={() => {
-          crearFacturaPDF();
-          registerFine(e); 
-        }}>
-          Crear Factura
-        </button>
+      <div className="form-group">
+        <label>Correo electrónico del infractor</label>
+        <input
+          type="email"
+          value={useremail}
+          onChange={(e) => setUserEmail(e.target.value)}
+          placeholder="Ingrese correo electrónico"
+        />
       </div>
+      <div className="action-button">
+    <button onClick={crearFacturaPDF}>Crear Factura</button>
+    <button onClick={registerFine}>Registrar Multa</button>
+</div>
+
     </div>
   );
 };
