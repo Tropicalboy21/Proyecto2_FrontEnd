@@ -109,27 +109,40 @@ th {
 
 .action-button {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
-    margin-top: 20px; 
+    margin-top: 20px;
+    gap: 20px; 
 }
 
 .action-button button {
-    padding: 10px 20px; 
-    font-size: 14px; 
-    background-color: #d12e54;
-    color: white;
+    padding: 8px 10px;
+    font-size: 16px;
+    background-color: #ff0303; 
+    color: white; 
     border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 160px; 
 }
 
+
 .action-button button:hover {
-    background-color: #0056b3;
+    background-color: #C12A4A; 
     transform: translateY(-2px);
 }
 
+.action-button button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+.action-button button:focus {
+    outline: none;
+    border: 2px solid #D12E54;
+}
 .error-message {
     color: red;
     font-size: 10px;
