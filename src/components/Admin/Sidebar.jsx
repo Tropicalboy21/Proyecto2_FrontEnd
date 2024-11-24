@@ -40,15 +40,15 @@ const Sidebar = ({ onLogout }) => {
             </li>
             <li>
               <FolderIcon fontSize="small" sx={{ color: 'white' }} />
-              <Link to="/creacionMulta">Registros</Link>
+              <Link to="/registrosAdmi">Registros</Link>
             </li>
             <li>
               <GavelIcon fontSize="small" sx={{ color: 'white' }} />
-              <Link to="/creacionMulta">Disputas</Link>
+              <Link to="/disputasAdmi">Disputas</Link>
             </li>
             <li>
               <SettingsIcon fontSize="small" sx={{ color: 'white' }} />
-              <Link to="/creacionMulta">Cuenta</Link>
+              <Link to="/cuentaAdmi">Cuenta</Link>
             </li>
             <li>
               <button className="logout-button" onClick={onLogout}>
