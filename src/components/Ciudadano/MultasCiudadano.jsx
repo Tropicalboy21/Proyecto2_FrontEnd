@@ -8,8 +8,6 @@ const Multas = () => {
 
   const username = localStorage.getItem('username');
   
-
-  
   useEffect(() => {
     const fetchFines = async () => {
       try {

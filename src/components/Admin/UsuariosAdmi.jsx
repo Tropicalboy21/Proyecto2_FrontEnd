@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../assets/styles/stylesAdmin/usuarios.css'
 import Alert from '../Alert'
 
@@ -10,6 +10,7 @@ const UsuariosAdmi = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('');
+    const [users, setUsers] = useState('');
     const [showAlert, setShowAlert] = useState(false); 
     const [alertType, setAlertType] = useState(''); 
     const [alertMessage, setAlertMessage] = useState('');
@@ -67,6 +68,37 @@ const UsuariosAdmi = () => {
       setShowAlert(false);
       setAlertMessage('');
     };
+
+    useEffect(() => {
+      const fetchUsers = async () => {
+        try {
+          
+          const response = await fetch('https://localhost:7289/api/Auth/GetAllUsers', {
+            
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+  
+          if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+          }
+  
+          const data = await response.json();
+          
+          if (Array.isArray(data) && data.length > 0) {
+            setUsers(data);
+          } else {
+            setUsers([]); 
+          }
+        } catch (err) {
+          setError(err.message);
+        }
+      };
+
+        fetchUsers();
+    });
   
     // const handleCheckboxChange = (event) => {
     //     setIsChecked(event.target.checked);
@@ -170,26 +202,26 @@ const UsuariosAdmi = () => {
               <table>
                 <thead>
                   <tr>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
                     <td>Usuario</td>
-                    <td>Cedula</td>
                     <td>Correo</td>
                     <td>Rol</td>
-                    <td>Estado</td>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody>              
+              {users.length > 0 ? (
+                users.map((user) => (
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{user.userName}</td>
+                    <td>{user.email}</td>
+                    <td>{user.role}</td>
                   </tr>
-                </tbody>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4">No se encontraron usuarios.</td>
+                </tr>
+              )}
+            </tbody>
               </table>
             </div>;
           default:
