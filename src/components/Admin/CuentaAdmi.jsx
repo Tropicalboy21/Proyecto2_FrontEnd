@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../assets/styles/stylesAdmin/registrosAdmi.css'
+import '../../assets/styles/stylesAdmin/cuenta.css'
 import Alert from '../Alert'
+import profileImg from '../../assets/imgs/progile_img.webp'
 
 const CuentaAdmi = () => {
     
@@ -102,8 +103,36 @@ return (
                 onClose={handleCloseAlert}/>
             )}
             <div className='view-port'>
-                <div className='register-sct'>
+                <div className='cuenta-sct'>
                 <h2 className='title'>Cuenta</h2>
+                 <div className='box-sct'>
+                  <div className='content-wrapper'>
+                  <div className='profile-pic'><img src={profileImg} alt="" />
+                  </div>
+                  <div className='profile-info'>
+                    <h3>Usuario</h3>
+                    <p>rol</p>
+                  </div>
+                  <div><button className='edit-button'>edit</button></div>
+                 </div>
+                 </div>
+                 <div className='box-sct'>
+                  <div className='content-wrapper'>
+                  <div className='profile-info'>
+                    <h3>Nombre</h3>
+                    <p>Nombre</p>
+                    <h3>Correo</h3>
+                    <p>Correo</p>
+                  </div>
+                  <div className='profile-info'>
+                    <h3>Apellido</h3>
+                    <p>Apellido</p>
+                    <h3>Cedula</h3>
+                    <p>Cedula</p>
+                  </div>
+                  <div><button className='edit-button'>edit</button></div>
+                 </div>
+                 </div>
                 </div>
             </div>
         </div>

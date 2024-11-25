@@ -11,7 +11,7 @@ const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
         return <Navigate to="/login" />;
     }
 
-    const isAdminRoute = ['/homeAdmi', '/usuariosAdmi', '/registrosAdmi'].some(route =>
+    const isAdminRoute = ['/homeAdmi', '/usuariosAdmi', '/registrosAdmi', '/cuentaAdmi'].some(route =>
         location.pathname.startsWith(route)
     );
 

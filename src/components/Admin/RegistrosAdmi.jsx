@@ -94,20 +94,20 @@ const RegistrosAdmi = () => {
 
     
 return (
-        <div className="view-container" >
-            {showAlert && (
-                <Alert 
-                type={alertType} 
-                message={alertMessage} 
-                onClose={handleCloseAlert}/>
-            )}
-            <div className='view-port'>
-                <div className='register-sct'>
-                <h2 className='title'>Registros</h2>
-                </div>
-            </div>
-        </div>
-    )
+  <div className="view-container" >
+      {showAlert && (
+          <Alert 
+          type={alertType} 
+          message={alertMessage} 
+          onClose={handleCloseAlert}/>
+      )}
+      <div className='view-port'>
+          <div className='register-sct'>
+          <h2 className='title'>Registros</h2>
+          </div>
+      </div>
+  </div>
+  )
 }
 
 export default RegistrosAdmi;
