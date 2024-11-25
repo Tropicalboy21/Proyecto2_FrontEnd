@@ -1,5 +1,5 @@
 /* Contenedor principal con 3 columnas */
-.contenedorVehOf {
+.contenedor-vehiculos-oficial {
   display: flex;
   flex-wrap: wrap; 
   justify-content: center; 
@@ -14,7 +14,7 @@
 }
 
 /* Estilo general de las columnas */
-.cardVehOf {
+.card-vehiculos-oficial {
   flex: 1 1 calc(33.33% - 20px); /
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 /* Títulos de las columnas */
-.cardVehOf h2 {
+.card-vehiculos-oficial h2 {
   font-family: 'fontLastica', sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -42,20 +42,20 @@
 }
 
 /* Estilos de formularios */
-.vehOf-form {
+.form-vehiculos-oficial form {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.VehOfform-label {
+.form-vehiculos-oficial label {
   margin: 10px 0 5px;
   font-size: 14px;
   font-weight: bold;
   color: #555;
 }
 
-.VehOfform-input {
+.form-vehiculos-oficial input {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -65,7 +65,7 @@
   width: 100%;
 }
 
-.VehOfform-button {
+.form-vehiculos-oficial button {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -77,27 +77,39 @@
   transition: transform 0.2s, background-color 0.3s;
 }
 
-form button:hover {
+.form-vehiculos-oficial button:hover {
   transform: scale(1.05);
   background-color: #c0392b;
 }
 
 /* Estilo específico para mensajes */
-.alineadorWrapper {
+.wrapper-vehiculos-oficial {
   text-align: center;
   margin-top: 15px;
 }
 
-.resultado-error {
+.resultado-error-mensaje-oficial {
   color: red;
   font-weight: bold;
   margin-top: 10px;
 }
 
-.resultado-seccion {
+.seccion-resultado-oficial {
   margin-top: 20px;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
 
+.error-mensaje-texto-oficial {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Las columnas ocupan el ancho completo */
+    max-width: 100%; /* Asegura que no excedan el ancho del contenedor */
+  }
+}
