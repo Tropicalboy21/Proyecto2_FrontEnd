@@ -41,7 +41,7 @@ const CodeVerification = ({username}) =>{
       if (data.role === 'Admin') {
         navigate('/homeAdmi');
       } else {
-        navigate('/home');
+        navigate('/homeCiudadano');
       }
 
 

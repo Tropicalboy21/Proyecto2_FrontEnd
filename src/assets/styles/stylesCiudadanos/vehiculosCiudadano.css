@@ -1,4 +1,4 @@
-.container {
+.contenedor-vehiculo-ciudadano {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; 
@@ -9,16 +9,10 @@
     width: 100%;
     gap: 20px;
     background-color: rgb(255, 255, 255);
-
-  
-    min-height: calc(100vh - 100px); 
-    align-items: center; 
-    justify-content: center; 
+    height: 100vh;
 }
 
-
-
-.cardRegistro {
+.card-vehiculo-registro-ciudadano {
     flex: 1 1 calc(50% - 20px);
     display: flex;
     flex-direction: column;
@@ -27,30 +21,33 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     padding: 25px;
-    max-width: 800px;
-    min-width: 400px;
-    min-height: 600px; 
-    max-height: 700px;
-    margin-top: 100px;
-}
-
-.cardConsulta {
-    flex: 1 1 calc(50% - 20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    padding: 25px;
-    max-width: 800px;
+    max-width: 600px;
     min-width: 400px;
     min-height: 700px; 
     max-height: 900px;
     margin-top: 100px;
+    margin-bottom: 103px;
 }
 
-.cardRegistro h2 {
+.card-vehiculo-consulta-ciudadano {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 600px;
+    min-width: 400px;
+    min-height: 700px; 
+    max-height: 900px;
+    margin-top: -600px;
+    margin-bottom: 83px;
+    margin-left: 800px;
+}
+
+.card-vehiculo-registro-ciudadano h2 {
     font-family: 'fontLastica', sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -59,7 +56,7 @@
     text-align: center;
 }
 
-.cardConsulta h2 {
+.card-vehiculo-consulta-ciudadano h2 {
     font-family: 'fontLastica', sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -68,20 +65,20 @@
     text-align: center;
 }
 
-form {
+.form-vehiculo-ciudadano {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-form label {
+.form-vehiculo-ciudadano label {
     margin: 10px 0 5px;
     font-size: 14px;
     font-weight: bold;
     color: #555;
 }
 
-form input {
+.form-vehiculo-ciudadano input {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -90,7 +87,7 @@ form input {
     outline: none;
 }
 
-form button {
+.form-vehiculo-ciudadano button {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -102,20 +99,33 @@ form button {
     transition: transform 0.2s;
 }
 
-form button:hover {
+.form-vehiculo-ciudadano button:hover {
     transform: scale(1.05);
     background-color: #c0392b;
 }
 
-.wrapper {
+.wrapper-vehiculo-ciudadano {
     text-align: center;
 }
 
-.title {
+.title-vehiculo-ciudadano {
     font-family: 'fontLastica', sans-serif;
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 28px;
     margin: 20px 0;
     text-align: center;
+    margin-top: 100px;
+}
+
+.texto-error-mensaje {
+    margin: 0;
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: #ff4800;
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }

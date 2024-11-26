@@ -33,7 +33,7 @@ body{
     background: #ffffff;
     box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
     border-radius: 15px 0 0 15px;
-    padding: 25px;
+    padding: 10px 25px;
 }
 
 
@@ -266,7 +266,7 @@ input:focus-visible {
 
 .view-container{
     width: 100vw;
-    min-height: 95.3vh;
+    min-height: 95.8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -281,7 +281,7 @@ input:focus-visible {
     width: 400px;
     background-image: url('../imgs/bg-login.png');
     background-size: cover;
-    height: 505.7px;
+    height: 477.7px;
     margin: 35px 0;
     border-radius:  0 15px 15px 0;
     box-shadow: 0px -4px 70px 29px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);

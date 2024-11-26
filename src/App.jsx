@@ -18,7 +18,9 @@ import HomeOficial from './components/Oficial/HomeOficial';
 import HomeJuez from './components/Juez/HomeJuez';
 import Mapa from  './components/Mapa';
 import VehiculosCiudadano from './components/Ciudadano/VehiculosCiudadano';
-
+import RegistrosAdmi from './components/Admin/RegistrosAdmi';
+import DisputasAdmi from './components/Admin/DisputasAdmi';
+import CuentaAdmi from './components/Admin/CuentaAdmi';
 
 
 const App = () => {
@@ -57,16 +59,27 @@ const App = () => {
 
           {/* Protected Routes */}
           <Route element={<ProtectedLayout isLoggedIn={isLoggedIn} onLogout={handleLogout} />}>
-            <Route path="/homeCiudadano" element={<HomeCiudadano username={username} />} />
+            {/* Admin */}
             <Route path="/homeAdmi" element={<HomeAdmi username={username} />} />
             <Route path="/usuariosAdmi" element={<UsuariosAdmin/>} />
-            <Route path="/multasCiudadano" element={<MultasCiudadano username={username} />} />
-  
-            <Route path="/vehiculosOficial" element={<VehiculosOficial />} />
+            <Route path="/registrosAdmi" element={<RegistrosAdmi/>} />
+            <Route path="/disputasAdmi" element={<DisputasAdmi/>} />
+            <Route path="/cuentaAdmi" element={<CuentaAdmi/>} />
+
+            {/* Ciudadano */}
+            <Route path="/homeCiudadano" element={<HomeCiudadano username={username} />} />
             <Route path="/vehiculosCiudadano" element={<VehiculosCiudadano />} />
             <Route path="/disputasCiudadano" element={<DisputasCiudadano />} />
+            <Route path="/multasCiudadano" element={<MultasCiudadano username={username} />} />
+  
+            {/* Oficial */}
             <Route path="/homeOficial" element={<HomeOficial />} />
+            <Route path="/vehiculosOficial" element={<VehiculosOficial />} />
+            
+            {/* Juez */}
             <Route path="/homeJuez" element={<HomeJuez />} />
+
+            {/* Shared */}
             <Route path="/mapa" element={<Mapa />} />
           </Route>
 

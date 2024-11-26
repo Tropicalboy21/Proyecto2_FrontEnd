@@ -1,3 +1,4 @@
+
 import '../../assets/styles/stylesCiudadanos/vehiculosCiudadano.css';
 import React, { useState } from "react";
 import axios from "axios";
@@ -99,7 +100,7 @@ const VehiculosCiudadano = () => {
   
 
   return (
-    <div className="container">
+    <div className="contenedor-vehiculo-ciudadano">
       {/* Alerta */}
       {showAlert && (
         <>
@@ -115,9 +116,9 @@ const VehiculosCiudadano = () => {
       )}
 
       {/* Columna de Registro */}
-      <div className="cardRegistro">
+      <div className="card-vehiculo-registro-ciudadano">
         <h2>Registrar Vehículo</h2>
-        <form onSubmit={handleRegistrar}>
+        <form className="form-vehiculo-ciudadano" onSubmit={handleRegistrar}>
           <label>Número de Motor</label>
           <input
             type="text"
@@ -126,7 +127,7 @@ const VehiculosCiudadano = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.NumeroMotor && (
-            <p className="error-text">{registroErrores.NumeroMotor}</p>
+            <p className="texto-error-mensaje">{registroErrores.NumeroMotor}</p>
           )}
           <label>Cantidad de Puertas</label>
           <input
@@ -136,7 +137,7 @@ const VehiculosCiudadano = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.CantidadPuertas && (
-            <p className="error-text">{registroErrores.CantidadPuertas}</p>
+            <p className="texto-error-mensaje">{registroErrores.CantidadPuertas}</p>
           )}
           <label>Color</label>
           <input
@@ -146,7 +147,7 @@ const VehiculosCiudadano = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.Color && (
-            <p className="error-text">{registroErrores.Color}</p>
+            <p className="texto-error-mensaje">{registroErrores.Color}</p>
           )}
           <label>Número de Placa</label>
           <input
@@ -156,7 +157,7 @@ const VehiculosCiudadano = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.NumeroPlaca && (
-            <p className="error-text">{registroErrores.NumeroPlaca}</p>
+            <p className="texto-error-mensaje">{registroErrores.NumeroPlaca}</p>
           )}
           <label>Tipo de Vehículo</label>
           <input
@@ -166,16 +167,16 @@ const VehiculosCiudadano = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.TipoVehiculo && (
-            <p className="error-text">{registroErrores.TipoVehiculo}</p>
+            <p className="texto-error-mensaje">{registroErrores.TipoVehiculo}</p>
           )}
           <button type="submit">Registrar</button>
         </form>
       </div>
 
       {/* Columna de Consulta */}
-      <div className="cardConsulta">
+      <div className="card-vehiculo-registro-ciudadano">
         <h2>Consultar Vehículo</h2>
-        <form onSubmit={handleConsultar}>
+        <form className="form-vehiculo-ciudadano" onSubmit={handleConsultar}>
           <label>Número de Placa</label>
           <input
             type="text"
@@ -185,11 +186,11 @@ const VehiculosCiudadano = () => {
               setConsultaError("");
             }}
           />
-          {consultaError && <p className="error-text">{consultaError}</p>}
+          {consultaError && <p className="texto-error-mensaje">{consultaError}</p>}
           <button type="submit">Consultar</button>
         </form>
         {vehiculoInfo && (
-          <div className="wrapper">
+          <div className="wrapper-vehiculo-ciudadano">
             <h3>Información del Vehículo</h3>
             <p><strong>Número de Motor:</strong> {vehiculoInfo.numeroMotor || "No disponible"}</p>
             <p><strong>Cantidad de Puertas:</strong> {vehiculoInfo.cantidadPuertas || "No disponible"}</p>

@@ -138,7 +138,7 @@ const VehiculosOficial = () => {
   };
 
   return (
-    <div className="container">
+    <div className="contenedor-vehiculos-oficial">
       {/* Mensaje de alerta */}
       {showAlert && (
         <div className="alert-container">
@@ -151,9 +151,9 @@ const VehiculosOficial = () => {
       )}
 
       {/* Lectura de Placas */}
-      <div className="card">
+      <div className="card-vehiculos-oficial">
         <h2>Lectura de Placas</h2>
-        <form onSubmit={handleSubmitLectura}>
+        <form className="form-vehiculos-oficial" onSubmit={handleSubmitLectura}>
           <input
             type="file"
             accept="image/png, image/jpeg"
@@ -164,7 +164,7 @@ const VehiculosOficial = () => {
           </button>
         </form>
         {resultText && (
-          <div className="result-section">
+          <div className="seccion-resultado-oficial">
             <h3>Resultado:</h3>
             <p>{resultText}</p>
           </div>
@@ -172,9 +172,9 @@ const VehiculosOficial = () => {
       </div>
 
       {/* Registro de Vehículos */}
-      <div className="card">
+      <div className="card-vehiculos-oficial">
         <h2>Registro de Vehículos</h2>
-        <form onSubmit={handleRegistrar}>
+        <form className="form-vehiculos-oficial" onSubmit={handleRegistrar}>
           <label>Número de Motor</label>
           <input
             type="text"
@@ -183,7 +183,7 @@ const VehiculosOficial = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.NumeroMotor && (
-            <p className="error-text">{registroErrores.NumeroMotor}</p>
+            <p className="error-mensaje-texto-oficial">{registroErrores.NumeroMotor}</p>
           )}
           <label>Cantidad de Puertas</label>
           <input
@@ -193,7 +193,7 @@ const VehiculosOficial = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.CantidadPuertas && (
-            <p className="error-text">{registroErrores.CantidadPuertas}</p>
+            <p className="error-mensaje-texto-oficial">{registroErrores.CantidadPuertas}</p>
           )}
           <label>Color</label>
           <input
@@ -203,7 +203,7 @@ const VehiculosOficial = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.Color && (
-            <p className="error-text">{registroErrores.Color}</p>
+            <p className="error-mensaje-texto-oficial">{registroErrores.Color}</p>
           )}
           <label>Número de Placa</label>
           <input
@@ -213,7 +213,7 @@ const VehiculosOficial = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.NumeroPlaca && (
-            <p className="error-text">{registroErrores.NumeroPlaca}</p>
+            <p className="error-mensaje-texto-oficial">{registroErrores.NumeroPlaca}</p>
           )}
           <label>Tipo de Vehículo</label>
           <input
@@ -223,16 +223,16 @@ const VehiculosOficial = () => {
             onChange={handleChangeRegistro}
           />
           {registroErrores.TipoVehiculo && (
-            <p className="error-text">{registroErrores.TipoVehiculo}</p>
+            <p className="error-mensaje-texto-oficial">{registroErrores.TipoVehiculo}</p>
           )}
           <button type="submit">Registrar</button>
         </form>
       </div>
 
       {/* Consulta de Vehículos */}
-      <div className="card">
+      <div className="card-vehiculos-oficial">
         <h2>Consulta de Vehículos</h2>
-        <form onSubmit={handleConsultar}>
+        <form className="form-vehiculos-oficial" onSubmit={handleConsultar}>
           <label>Número de Placa</label>
           <input
             type="text"
@@ -242,11 +242,13 @@ const VehiculosOficial = () => {
               setConsultaError('');
             }}
           />
-          {consultaError && <p className="error-text">{consultaError}</p>}
+          {consultaError && (
+            <p className="resultado-error-mensaje-oficial">{consultaError}</p>
+          )}
           <button type="submit">Consultar</button>
         </form>
         {vehiculoInfo && (
-          <div className="wrapper">
+          <div className="wrapper-vehiculos-oficial">
             <h3>Información del Vehículo</h3>
             <p>
               <strong>Número de Motor:</strong> {vehiculoInfo.numeroMotor || 'No disponible'}
