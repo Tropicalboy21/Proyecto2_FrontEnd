@@ -1,0 +1,721 @@
+[
+    {
+        "id": 1,
+        "category": "Estacionamiento Ilegal",
+        "law": "Art. Ley INCISO 96",
+        "conduct": "Los espacios preferenciales podrán ser ocupados, únicamente, por quienes tengan una discapacidad evidente o certificada, así como por mujeres en estado de gravidez avanzado y ciudadanos de oro. La administración del parqueo velará porque los espacios preferenciales no sean ocupados por otras personas no autorizadas. En caso de que personas no autorizadas ocupen dichos espacios, les será aplicable una multa de categoría C.",
+        "price": 122.904
+    },
+    {
+        "id": 2,
+        "category": "Estacionamiento Ilegal",
+        "law": "Art. Ley INCISO 96.1",
+        "conduct": "La administración del estacionamiento deberá denunciar, inmediatamente, el hecho a las autoridades de tránsito y solicitar de inmediato que con el concurso de sus grúas remueva el vehículo infractor. El propietario del establecimiento que incumpla con esta obligación estará sujeto a una multa equivalente a cinco veces la multa estipulada en la categoría C.",
+        "price": 614.523
+    },
+
+
+    {
+        "id": 3,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 a)",
+        "conduct": "A quien conduzca bajo la influencia de bebidas alcohólicas en las siguientes condiciones de concentración de presencia de alcohol en sangre o aire espirado: i) Superior a cero coma cincuenta gramos (0,50 g) por cada litro de sangre y hasta cero coma setenta y cinco gramos (0,75 g) para cada litro de sangre, o superior a cero coma veinticinco miligramos (0,25 mg) y hasta cero coma treinta y ocho miligramos (0,38 mg) en aire espirado; en ambos supuestos para cualquier tipo de conductor. ii) Superior a cero coma veinte gramos (0,20 g) hasta cero coma cincuenta gramos (0,50 g) de alcohol por cada litro de sangre, o superior a cero coma diez miligramos (0,10 mg) hasta cero coma veinticinco miligramos (0,25 mg) por cada litro de sangre en aire espirado; en ambos supuestos para conductores profesionales y para aquellos conductores con licencia de conducir emitida por primera vez dentro de un plazo menor de tres años.",
+        "price": 363.748
+    },
+    {
+        "id": 4,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 b)",
+        "conduct": "Al conductor que circule en cualquier vía pública a una velocidad superior a los ciento veinte kilómetros por hora, siempre que no se trate de competencias de velocidad ilegales denominadas piques, las que se encuentran contempladas en el artículo 254 bis del Código Penal, Ley N.º 4573, de 4 mayo de 1970, y sus reformas.",
+        "price": 363.748
+    },
+    {
+        "id": 5,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 c)",
+        "conduct": "A quien conduzca con licencia que haya sido suspendida por infracciones a la presente ley.",
+        "price": 363.748
+    },
+    {
+        "id": 6,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 d)",
+        "conduct": "Al conductor que adelante, curvas, intersecciones, cruces de ferrocarril, puentes, túneles, pasos a desnivel, por espaldón, por el costado derecho.",
+        "price": 363.748
+    },
+    {
+        "id": 7,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 e)",
+        "conduct": "Al conductor que invada el carril adjunto que se encuentre separado por una línea de barrera de trazo continuo, a excepción de lo establecido en el artículo 100.",
+        "price": 363.748
+    },
+    {
+        "id": 8,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 f)",
+        "conduct": "Al conductor que infrinja la prohibición de giro en U y giro a la izquierda en lugares donde haya señalamiento vertical y horizontal.",
+        "price": 363.748
+    },
+    {
+        "id": 9,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 g)",
+        "conduct": "Al conductor que infrinja la prohibición de giro en U y giro a la izquierda en lugares donde haya señalamiento vertical y horizontal.",
+        "price": 363.748
+    },
+    {
+        "id": 10,
+        "category": "Categoría A",
+        "law": "Art. Ley INCISO 143 h)",
+        "conduct": "Producir ruido o emisiones de gases, humos o partículas contaminantes que exceden los límites establecidos, de conformidad con el artículo 38 y el artículo 39 de esta ley.",
+        "price": 363.748
+    },
+
+
+    {
+        "id": 11,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 a)",
+        "conduct": "Al conductor que incumpla las normas de uso de luces establecidas en el artículo 103 de la presente ley, siempre que no exista una sanción superior distinta.",
+        "price": 60.831
+    },
+    {
+        "id": 12,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 b)",
+        "conduct": "A quien conduzca un vehículo de transporte de materiales peligrosos, infringiendo las disposiciones del artículo 115 de la presente ley..",
+        "price": 245.809
+    },
+    {
+        "id": 13,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 c)",
+        "conduct": "Al conductor de vehículos tipo motocicleta y bicimoto que permita que personas menores de cinco años de edad viajen como acompañantes en esos automotores, infringiendo el inciso e) del artículo 117 de esta ley.",
+        "price": 245.809
+    },
+    {
+        "id": 14,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 d)",
+        "conduct": "Al conductor que irrespete la señal de alto en una intersección.",
+        "price": 245.809
+    },
+    {
+        "id": 15,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 e)",
+        "conduct": "Al conductor que irrespete la señal de alto de la luz roja de un semáforo, salvo las excepciones contempladas en el artículo 104 de esta ley.",
+        "price": 245.809
+    },
+    {
+        "id": 16,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 f)",
+        "conduct": "Al conductor que circule un vehículo con placas que registralmente pertenezcan a otro vehículo, o con placas alteradas o falsas.",
+        "price": 245.809
+    },
+    {
+        "id": 17,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 g)",
+        "conduct": "Al conductor que circule a más de cuarenta kilómetros por hora (40 km/h) sobre el límite máximo establecido, salvo que exista una sanción superior.",
+        "price": 245.809
+    },
+    {
+        "id": 18,
+        "category": "Categoría B",
+        "law": "Art. Ley INCISO 144 h)",
+        "conduct": "Al conductor que, por irrespetar la señal de alto, en el derecho de vía ferroviario, dañe de cualquier forma los dispositivos colocados como sistema de alerta y prevención ante el paso del tren.",
+        "price": 245.809
+    },
+
+    {
+        "id": "19",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 a)",
+        "conduct": "Conducir vehículos de carga pesada en zonas urbanas y suburbanas no autorizadas por el MOPT",
+        "price": 124.196
+    },
+    {
+        "id": "20",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 b)",
+        "conduct": "Circular un vehículo con exceso de carga en las vías públicas, salvo lo dispuesto en el inciso h) y párrafos finales del artículo 114",
+        "price": 124.196
+    },
+    {
+        "id": "21",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 c)",
+        "conduct": "Conducir en vías públicas vehículos automotores modificados o adaptados, en contravención de lo dispuesto en el artículo 122 de esta ley",
+        "price": 124.196
+    },
+    {
+        "id": "22",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 d)",
+        "conduct": "Poner en circulación un vehículo sin los dispositivos retrorreflectivos exigidos",
+        "price": 124.196
+    },
+    {
+        "id": "23",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 e)",
+        "conduct": "Incumplir con los recorridos y las paradas establecidos por el CTP para los vehículos de transporte público, salvo caso fortuito o fuerza mayor",
+        "price": 124.196
+    },
+    {
+        "id": "24",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 f)",
+        "conduct": "Transportar exceso de pasajeros en vehículos de transporte público, según la capacidad fijada por el CTP",
+        "price": 124.196
+    },
+    {
+        "id": "25",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 g)",
+        "conduct": "Trasladar pasajeros en el área marcada en entrada y salida, en contravención del inciso a) del artículo 51 de esta ley",
+        "price": 124.196
+    },
+    {
+        "id": "26",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 h)",
+        "conduct": "Circular con vehículo sin las luces reglamentarias encendidas desde las seis de la tarde hasta las seis de la mañana, o cuando se dificulte la visibilidad",
+        "price": 124.196
+    },
+    {
+        "id": "27",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 i)",
+        "conduct": "Incumplir las disposiciones del artículo 113 al conducir vehículos utilizados para acarreo en modalidad grúa o plataforma",
+        "price": 124.196
+    },
+    {
+        "id": "28",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 j)",
+        "conduct": "No portar taxímetro, o tenerlo alterado, en vehículos de transporte público modalidad taxi",
+        "price": 124.196
+    },
+    {
+        "id": "29",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 k)",
+        "conduct": "No utilizar el taxímetro al trasladar pasajeros en modalidad taxi",
+        "price": 124.196
+    },
+    {
+        "id": "30",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 l)",
+        "conduct": "Realizar adelantamiento valiéndose de la prioridad de paso de los vehículos de emergencia",
+        "price": 124.196
+    },
+    {
+        "id": "31",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 m)",
+        "conduct": "Circular en las aceras con vehículos automotores",
+        "price": 124.196
+    },
+    {
+        "id": "32",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 n)",
+        "conduct": "Adelantar a otro vehículo detenido frente a una zona de paso para peatones",
+        "price": 124.196
+    },
+    {
+        "id": "33",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 ñ)",
+        "conduct": "Infringir las reglas de conducción respecto a la utilización de teléfono móvil o cualquier otro medio de comunicación mientras conduce, salvo que no se empleen las manos, y la realización de actividades distintas de las que demanda la debida conducción",
+        "price": 124.196
+    },
+    {
+        "id": "34",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 o)",
+        "conduct": "Conducir sin haber obtenido licencia requerida para el tipo y clase de vehículo conducido, permiso temporal de aprendizaje, o conducir con permiso temporal sin el debido acompañante",
+        "price": 124.196
+    },
+    {
+        "id": "35",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 p)",
+        "conduct": "Circular a una velocidad superior a 25 km/h en vías públicas localizadas alrededor de planteles educativos con estudiantes presentes, centros de salud, centros de atención a personas adultas mayores o lugares con concentraciones masivas, debidamente identificados",
+        "price": 124.196
+    },
+    {
+        "id": "36",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 q)",
+        "conduct": "Conducir sin utilizar el cinturón de seguridad",
+        "price": 124.196
+    },
+    {
+        "id": "37",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 r)",
+        "conduct": "Permitir que los acompañantes no utilicen el cinturón de seguridad",
+        "price": 124.196
+    },
+    {
+        "id": "38",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 s)",
+        "conduct": "No utilizar el casco de seguridad debidamente ajustado en vehículos tipo motocicleta y bicimoto",
+        "price": 124.196
+    },{
+        "id": "39",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 t)",
+        "conduct": "Permitir al acompañante viajar sin utilizar el casco de seguridad debidamente ajustado en vehículos tipo motocicleta y bicimoto",
+        "price": 124.196
+    },
+    {
+        "id": "40",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 u)",
+        "conduct": "Circular a más de treinta kilómetros por hora (30 km/h) sobre el límite máximo establecido, salvo que exista una sanción superior",
+        "price": 124.196
+    },
+    {
+        "id": "41",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 v)",
+        "conduct": "Negarse a prestar servicio a personas adultas mayores o con discapacidad en vehículos de transporte público, en cualquiera de sus modalidades",
+        "price": 124.196
+    },
+    {
+        "id": "42",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 w)",
+        "conduct": "Adelantar en medio de las filas de vehículos a una velocidad superior a veinticinco kilómetros por hora (25 km/h) con vehículos tipo bicimoto y motocicleta, salvo la excepción dispuesta en el inciso g) del artículo 108",
+        "price": 124.196
+    },
+    {
+        "id": "43",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 x)",
+        "conduct": "Circular a una velocidad inferior a la mínima establecida en el tramo respectivo, con el propósito comprobado de congestionar o entorpecer el libre flujo vehicular",
+        "price": 124.196
+    },
+    {
+        "id": "44",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 y)",
+        "conduct": "Utilizar un vehículo para prestar servicio de transporte público sin contar con las autorizaciones respectivas, ya sea como propietario o conductor",
+        "price": 124.196
+    },
+    {
+        "id": "45",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 z)",
+        "conduct": "Circular evadiendo el control o la señal de alto en el derecho de vía ferroviario, así como estacionar u obstruir el derecho de vía ferroviario con cualquier tipo de vehículo",
+        "price": 124.196
+    },
+    {
+        "id": "46",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 aa)",
+        "conduct": "Desacatar las disposiciones a), b), c), d), e), f) y j) del artículo 114 de esta ley, relativas a la carga de vehículos livianos o pesados",
+        "price": 124.196
+    },
+    {
+        "id": "47",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 bb)",
+        "conduct": "Conducir con exceso de pasajeros, según la capacidad máxima del vehículo",
+        "price": 124.196
+    },
+    {
+        "id": "48",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 cc)",
+        "conduct": "Trasladar pasajeros fuera de la cabina, en la cajuela o cajón del vehículo, salvo excepciones para actividades agrícolas, mantenimiento de servicios públicos, atención de emergencias, y traslado en carreteras cantonales de lastre o tierra",
+        "price": 124.196
+    },
+    {
+        "id": "49",
+        "category": "Categoría C",
+        "law": "Art. Ley INCISO 145 dd)",
+        "conduct": "Al conductor que circule un vehículo en las vías y durante los días o las horas cuyo tránsito sea restringido por emergencia nacional decretada.",
+        "price": 124.196
+    },
+
+    {
+        "id": "50",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 a)",
+        "conduct": "Permitir la circulación de un vehículo con algún dispositivo que permita burlar o anular los aparatos de vigilancia de la Policía de Tránsito",
+        "price": 61.470
+    },
+    {
+        "id": "51",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 b)",
+        "conduct": "Irrespetar las señales de tránsito fijas, verticales u horizontales, y las indicaciones de la autoridad de tránsito, siempre que no exista una sanción superior distinta",
+        "price": 61.470
+    },
+    {
+        "id": "52",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 c)",
+        "conduct": "Irrespetar las prioridades de paso según lo establecido en el artículo 105 de esta ley",
+        "price": 61.470
+    },
+    {
+        "id": "53",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 d)",
+        "conduct": "Incumplir las indicaciones para la circulación en rotondas, señaladas en el artículo 106 de esta ley",
+        "price": 61.470
+    },
+    {
+        "id": "54",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 e)",
+        "conduct": "Incumplir las reglas sobre el uso del carril central establecidas en el artículo 107 de esta ley",
+        "price": 61.470
+    },
+    {
+        "id": "55",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 f)",
+        "conduct": "Incumplir los requisitos de señalamiento de maniobra establecidos en el inciso c) del artículo 108 de esta ley",
+        "price": 61.470
+    },
+    {
+        "id": "56",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 g",
+        "conduct": "Incumplir las normas de uso de luces establecidas en el artículo 103 de la presente ley, siempre que no exista una sanción superior distinta",
+        "price": 61.470
+    },
+    {
+        "id": "57",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 h",
+        "conduct": "Circular sin vestimenta retrorreflectiva en vehículos tipo motocicleta y bicimoto",
+        "price": 61.470
+    },
+    {
+        "id": "58",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 i",
+        "conduct": "Infringir las prohibiciones para la circulación de vehículos establecidas en el artículo 122 de la presente ley, siempre que no exista una sanción superior distinta",
+        "price": 61.470
+    },
+    {
+        "id": "59",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 j",
+        "conduct": "Poner en circulación un vehículo habiéndose alterado el motor, los sistemas de inyección, de carburación, o de control de emisiones, según lo establecido en su tarjeta de IVE",
+        "price": 61.470
+    },
+    {
+        "id": "60",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 k",
+        "conduct": "Operar un taxi, servicio especial o servicio especial estable de taxi en demanda de pasajeros en zonas no autorizadas",
+        "price": 61.470
+    },
+    {
+        "id": "61",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 l)(",
+        "conduct": "Brindar servicio especial estable de taxi sin el respectivo contrato",
+        "price": 61.470
+    },
+    {
+        "id": "62",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 m)",
+        "conduct": "Infringir las reglas sobre maniobras de retroceso establecidas en el artículo 109 de la presente ley",
+        "price": 61.470
+    },
+    {
+        "id": "63",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 n)",
+        "conduct": "Infringir las normas de estacionamiento establecidas en el artículo 110 de esta ley, siempre que no exista una sanción superior distinta",
+        "price": 61.470
+    },
+    {
+        "id": "64",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 ñ)",
+        "conduct": "Circular vehículos en las vías cuyo tránsito es restringido por disposición de la Dirección General de Ingeniería de Tránsito",
+        "price": 61.470
+    },{
+        "id": "65",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 o)",
+        "conduct": "Circular un vehículo de transporte público con las puertas abiertas durante el recorrido o permitir subir o bajar pasajeros en zonas no autorizadas",
+        "price": 61.470
+      },
+      {
+        "id": "67",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 p)",
+        "conduct": "Conducir con licencia no apta para el tipo y clase de vehículo conducido",
+        "price": 61.470
+      },
+      {
+        "id": "68",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 q)",
+        "conduct": "Circular con licencia extranjera por más de tres meses luego de haber ingresado al país",
+        "price": 61.470
+      },
+      {
+        "id": "69",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 r)",
+        "conduct": "Ingresar a una intersección a pesar de disponer de luz verde o derecho de vía si el congestionamiento vehicular produce obstrucción a la libre circulación",
+        "price": 61.470
+      },
+      {
+        "id": "70",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 s)",
+        "conduct": "Circular con vehículos automotores en las playas, salvo las excepciones previstas en la ley",
+        "price": 61.470
+      },
+      {
+        "id": "71",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 t)",
+        "conduct": "Aprovisionar combustible en un vehículo de transporte público mientras se transportan pasajeros",
+        "price": 61.470
+      },
+      {
+        "id": "72",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 u)",
+        "conduct": "Circular en bicicleta por vías públicas cuya velocidad autorizada sea igual o mayor a ochenta kilómetros por hora (80 km/h)",
+        "price": 61.470
+      },
+      {
+        "id": "73",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 v)",
+        "conduct": "Circular a más de veinte kilómetros por hora (20 km/h) sobre el límite máximo establecido, salvo que exista una sanción superior",
+        "price": 61.470
+      },
+      {
+        "id": "74",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 w)",
+        "conduct": "Poner en circulación un vehículo sin la IVE del período correspondiente",
+        "price": 61.470
+      },
+      {
+        "id": "75",
+        "category": "Categoría D",
+        "law": "Art. Ley INCISO 146 x)",
+        "conduct": "Poner en circulación un vehículo sin estar al día en el pago de los derechos de circulación y del seguro obligatorio de vehículos",
+        "price": 61.470
+      },
+
+    {
+        "id": "76",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 a)",
+        "conduct": "Al conductor que cause lesiones o daños a bienes en forma culposa, siempre que por la materia de la que se trate o por su gravedad, no le sea aplicable otra legislación.",
+        "price": 26.344
+    },
+    {
+        "id": "77",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 b)",
+        "conduct": "Circular con un vehículo de transporte de carga limitada que infrinja los requisitos establecidos en el artículo 112",
+        "price": 26.344
+      },
+      {
+        "id": "78",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 c)",
+        "conduct": "Utilizar los altoparlantes del vehículo entre las 19:00 y las 7:00 horas, salvo permiso dado por el MOPT por intereses públicos",
+        "price": 26.344
+      },
+      {
+        "id": "79",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 d)",
+        "conduct": "Utilizar altoparlantes a menos de 100 metros de clínicas, hospitales, centros de enseñanza o iglesias durante actividades en estos lugares",
+        "price": 26.344
+      },
+      {
+        "id": "80",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 e)",
+        "conduct": "Conducir un vehículo de tránsito lento a menos de 50 metros de otro vehículo de tránsito lento",
+        "price": 26.344
+      },
+      {
+        "id": "81",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 f)",
+        "conduct": "Detenerse sobre el señalamiento horizontal, excepto en señal de alto con visibilidad insuficiente para avanzar",
+        "price": 26.344
+      },
+      {
+        "id": "82",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 g)",
+        "conduct": "Circular sin los documentos exigidos por el artículo 4 o sin la licencia de conducir respectiva",
+        "price": 26.344
+      },
+      {
+        "id": "83",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 h)",
+        "conduct": "Sujetarse de otro vehículo en marcha en vías públicas",
+        "price": 26.344
+      },
+      {
+        "id": "84",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 i)",
+        "conduct": "Infringir las normas de adelantamiento según el artículo 108, salvo sanción superior",
+        "price": 26.344
+      },
+      {
+        "id": "85",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 j)",
+        "conduct": "No ceder el paso a peatones en los sitios indicados por el señalamiento vial",
+        "price": 26.344
+      },
+      {
+        "id": "86",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 k)",
+        "conduct": "Circular con las placas reglamentarias en un sitio distinto al destinado para estas",
+        "price": 26.344
+      },
+      {
+        "id": "87",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 l)",
+        "conduct": "Conducir con licencia o permiso temporal de aprendizaje vencido",
+        "price": 26.344
+      },
+      {
+        "id": "88",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 m)",
+        "conduct": "Circular sin los implementos de seguridad exigidos por el artículo 36",
+        "price": 26.344
+      },
+      {
+        "id": "89",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 n)",
+        "conduct": "Evitar el pago de peaje o no presentar comprobante de pago al ser solicitado",
+        "price": 26.344
+    },
+    {
+        "id": "90",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 ñ)",
+        "conduct": "Infringir las disposiciones de la restricción vehicular",
+        "price": 26.344
+    },
+    {
+        "id": "91",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 o)",
+        "conduct": "Utilizar la bocina o dispositivos sonoros para apresurar al conductor precedente",
+        "price": 26.344
+    },
+    {
+        "id": "92",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 p)",
+        "conduct": "Utilizar la bocina a menos de 100 metros de hospitales, clínicas, iglesias y centros de enseñanza durante actividades",
+        "price": 26.344
+    },
+    {
+        "id": "93",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 q)",
+        "conduct": "Utilizar de forma abusiva señales sonoras sin causa justificada",
+        "price": 26.344
+    },
+    {
+        "id": "94",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 r)",
+        "conduct": "Al conductor que cause congestionamiento vial al reducir la velocidad para observar un accidente o cualquier otro evento.",
+        "price": 26.344
+    },
+    {
+        "id": "95",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 s)",
+        "conduct": "Conducir un vehículo sin placas o con menos placas de las reglamentarias",
+        "price": 26.344
+    },
+    {
+        "id": "96",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 t)",
+        "conduct": "Usar estacionamientos preferenciales sin cumplir las condiciones del artículo 96",
+        "price": 26.344
+    },
+    {
+        "id": "97",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 u)",
+        "conduct": "Circular con un vehículo modificado sin informar conforme al artículo 13",
+        "price": 26.344
+    },
+    {
+        "id": "98",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 v)",
+        "conduct": "Circular incumpliendo requisitos establecidos en el título II, capítulo I, sección V de la ley, salvo sanción superior",
+        "price": 26.344
+    },
+    {
+        "id": "99",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 w)",
+        "conduct": "Circular un vehículo de transporte público sin la rotulación exigida por la ley",
+        "price": 26.344
+    },
+    {
+        "id": "100",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 x)",
+        "conduct": "Enseñar a conducir bicicletas en vías públicas con velocidad autorizada superior a 40 km/h",
+        "price": 26.344
+    },
+    {
+        "id": "101",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 y)",
+        "conduct": "Circular en las aceras con una bicicleta",
+        "price": 26.344
+    },
+    {
+        "id": "102",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 z)",
+        "conduct": "Circular en vías públicas con patinetas, patines y otros vehículos no autorizados según el artículo 124",
+        "price": 26.344
+    },
+    {
+        "id": "103",
+        "category": "Categoría E",
+        "law": "Art. Ley INCISO 147 aa)",
+        "conduct": "Transitar por vías públicas como peatón en contravención de los incisos del artículo 120, salvo sanción superior",
+        "price": 26.344
+    }
+]

@@ -44,6 +44,17 @@ const Multas = () => {
     }
   }, [username]);
 
+  // Function to handle payment
+  const handlePay = (fineId) => {
+    console.log(`Paying fine with ID: ${fineId}`);
+    // Add functionality to call an API for payment
+  };
+
+  // Function to handle dispute
+  const handleDispute = (fineId) => {
+    console.log(`Disputing fine with ID: ${fineId}`);
+    // Add functionality to open a dispute form or call an API
+  };
 
   return (
     <div className="view-container">
@@ -60,7 +71,8 @@ const Multas = () => {
                 <th>ID</th>
                 <th>Razón</th>
                 <th>Monto</th>
-                <th>Fecha</th>
+                <th>Fecha</th>                
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -72,6 +84,15 @@ const Multas = () => {
                     <td>{fine.description}</td>
                     <td>₡{fine.amount}</td>
                     <td>{new Date(fine.issuedDate).toLocaleDateString()}</td>
+                    <td>
+                      {/* Buttons for actions */}
+                      <button className="edit-button" onClick={() => handlePay(fine.id)}>
+                        Pagar
+                      </button>
+                      <button className="edit-button" onClick={() => handleDispute(fine.id)}>
+                        Disputar
+                      </button>
+                    </td>
                   </tr>
                 ))
               ) : (
