@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+
 import "../../assets/styles/stylesOficial/CreacionMulta.css";
 import Alert from '../../components/Alert';
 import ImagenLogo from '../../assets/imgs/logo.png';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import html2canvas from 'html2canvas';
+
 
 const CreacionMulta = ({ username }) => {
   const [amount, setAmount] = useState('');
@@ -133,25 +136,38 @@ const CreacionMulta = ({ username }) => {
   const totalFormatted = montoMulta.toFixed(2);
 
   const crearFacturaPDF = () => {
-    if (!handleValidations()) return;
+    if (!handleValidations()) return; 
 
     const invoice = document.querySelector('.invoice'); 
     
     html2canvas(invoice, { scale: 2 }).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-      const imgData = canvas.toDataURL('image/png');
-
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-  
-      pdf.save('factura_multa.pdf');
+        
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('factura_multa.pdf'); 
     });
-  };
+};
 
+
+
+
+  function redirectToHomeOficial() {
+    const history = useHistory();
+    history.push('/HomeOficial'); 
+}
+
+const handleValidations = () => {
+  if (!inspector || !placaVehiculo || !useremail || !montoMulta) {
+      setError("Todos los campos son obligatorios.");
+      return false;
+  }
+  return true;
+};
 
   return (
     <div className="invoice">
@@ -303,6 +319,7 @@ const CreacionMulta = ({ username }) => {
       <div className="action-button">
     <button onClick={crearFacturaPDF}>Crear Factura</button>
     <button onClick={registerFine}>Registrar Multa</button>
+    <button onClick={redirectToHomeOficial}>Regresar</button>
 </div>
 
     </div>
