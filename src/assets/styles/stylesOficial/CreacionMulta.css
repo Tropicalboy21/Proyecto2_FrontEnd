@@ -106,13 +106,22 @@ th {
 .signature-section label {
     font-weight: bold;
 }
+.signature-section input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
 
 .action-button {
     display: flex;
     justify-content: center; 
     align-items: center;
     margin-top: 20px;
-    gap: 20px; 
+    gap: 15px; 
 }
 
 .action-button button {
@@ -124,8 +133,10 @@ th {
     border-radius: 8px; 
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    min-width: 160px; 
-}
+    min-width: 130px; 
+    height: 40px;
+    display: inline-flex;
+} 
 
 
 .action-button button:hover {
