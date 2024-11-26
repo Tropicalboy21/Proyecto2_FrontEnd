@@ -21,6 +21,7 @@ import VehiculosCiudadano from './components/Ciudadano/VehiculosCiudadano';
 import RegistrosAdmi from './components/Admin/RegistrosAdmi';
 import DisputasAdmi from './components/Admin/DisputasAdmi';
 import CuentaAdmi from './components/Admin/CuentaAdmi';
+import OficialMulta from './components/Oficial/OficialMulta';
 
 
 const App = () => {
@@ -75,7 +76,8 @@ const App = () => {
             {/* Oficial */}
             <Route path="/homeOficial" element={<HomeOficial />} />
             <Route path="/vehiculosOficial" element={<VehiculosOficial />} />
-            
+            <Route path="/oficialMulta" element={<OficialMulta/>} />
+
             {/* Juez */}
             <Route path="/homeJuez" element={<HomeJuez />} />
 
