@@ -50,6 +50,15 @@ const OficialMulta = ({username}) =>{
         setShowAlert(false);
         setAlertMessage('');
       };
+
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based, so add 1
+    const day = String(today.getDate()).padStart(2, '0');
+    const year = today.getFullYear();
+
+    const currentDate = `${month}/${day}/${year}`;
+
+      
     return(
     <div className='view-container'>
 {showAlert && (
@@ -60,7 +69,8 @@ const OficialMulta = ({username}) =>{
         <form onSubmit={registerFine} className='padre2'>
         <img src={ImagenLogo} alt="imagelogo" className='tamano-imagen' />
         <h2 className='title'>Registrar una multa</h2>
-        <p>{username}</p>
+        <p>Inspector: {username}</p>
+        <p>Fecha: {currentDate}</p>
         <div className='Inputs'>
         <input
           type= "number"
@@ -70,20 +80,40 @@ const OficialMulta = ({username}) =>{
           required
           />
           <input
-          type= "text"
-          placeholder="Descripcion"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-          />
-          <input
             type="text"
             placeholder='Email'
             value={useremail}
             onChange={(e) => setuseremail(e.target.value)}
             required
           />
-        
+            <input
+            type="text"
+            placeholder='Placa'
+            value={useremail}
+            onChange={(e) => setuseremail(e.target.value)}
+            required
+          />
+            <input
+            type="text"
+            placeholder='Cedula'
+            value={useremail}
+            onChange={(e) => setuseremail(e.target.value)}
+            required
+          />
+            <input
+            type="text"
+            placeholder='Placa'
+            value={useremail}
+            onChange={(e) => setuseremail(e.target.value)}
+            required
+          />
+          <input
+          type= "text"
+          placeholder="Descripcion"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+          />
         </div>
         <div className='Buttons'>
           <button className='iniciar login' type="submit">Registrar</button>

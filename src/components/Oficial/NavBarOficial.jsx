@@ -16,12 +16,6 @@ const NavBarOficial = ({ username, onLogout }) => {
         <Link to="/vehiculos">
           <button className="nav-button">VEHICULOS</button>
         </Link>
-        <Link to="/disputas">
-          <button className="nav-button">REGLAMENTO</button>
-        </Link>
-        <Link to="/notificaciones">
-          <button className="nav-button">NOTIFICACIONES</button>
-        </Link>
         <Link to="/mapa">
           <button className="nav-button">MAPA</button>
         </Link>
