@@ -5,10 +5,12 @@ import ImagenLogo from '../../assets/imgs/logo.png';
 import Alert from '../Alert';
 import multas from '../../assets/data/multas.json'; // Import JSON file
 
-const OficialMulta = ({ username }) => {
+const OficialMulta = () => {
+  const [place, setPlace] = useState('');
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [useremail, setUserEmail] = useState('');
+  const [plate, setPlate] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedLaw, setSelectedLaw] = useState('');
   const [filteredLaws, setFilteredLaws] = useState([]);
@@ -16,6 +18,8 @@ const OficialMulta = ({ username }) => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertType, setAlertType] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
+
+  const username = localStorage.getItem('username');
 
   useEffect(() => {
     // Filter laws based on selected category
@@ -49,9 +53,16 @@ const OficialMulta = ({ username }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount,
-          description,
+          inspector: username, 
           userEmail: useremail,
+          place: place, 
+          licensePlate: plate,
+          category: selectedCategory,
+          article: selectedLaw,
+          description: description,
+          description: description,
+          conduct: conduct,
+          amount: amount,
         }),
       });
 
@@ -98,15 +109,15 @@ const OficialMulta = ({ username }) => {
                     <input
             type="text"
             placeholder="N° Zona"
-            value={useremail}
-            onChange={(e) => setUserEmail(e.target.value)}
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
             required
           />
             <input
             type="text"
             placeholder="Placa Vehicular"
-            value={useremail}
-            onChange={(e) => setUserEmail(e.target.value)}
+            value={plate}
+            onChange={(e) => setPlate(e.target.value)}
             required
           />
           {/* Category Select */}
