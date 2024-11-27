@@ -22,6 +22,7 @@ import RegistrosAdmi from './components/Admin/RegistrosAdmi';
 import DisputasAdmi from './components/Admin/DisputasAdmi';
 import CuentaAdmi from './components/Admin/CuentaAdmi';
 import OficialMulta from './components/Oficial/OficialMulta';
+import PagoCiudadano from './components/Ciudadano/PagoCiudadano';
 
 
 const App = () => {
@@ -72,6 +73,8 @@ const App = () => {
             <Route path="/vehiculosCiudadano" element={<VehiculosCiudadano />} />
             <Route path="/disputasCiudadano" element={<DisputasCiudadano />} />
             <Route path="/multasCiudadano" element={<MultasCiudadano username={username} />} />
+            <Route path="/pagoCiudadano" element={<PagoCiudadano username={username} />} />
+
   
             {/* Oficial */}
             <Route path="/homeOficial" element={<HomeOficial />} />
