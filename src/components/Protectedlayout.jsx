@@ -15,7 +15,7 @@ const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
         location.pathname.startsWith(route)
     );
 
-    const isOficialRoute = ['/homeOficial', '/creacionMulta'].some(route =>
+    const isOficialRoute = ['/homeOficial', '/creacionMulta', '/oficialMulta'].some(route =>
         location.pathname.startsWith(route)
     );
 

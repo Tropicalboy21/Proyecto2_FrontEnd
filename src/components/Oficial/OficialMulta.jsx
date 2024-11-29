@@ -60,7 +60,6 @@ const OficialMulta = () => {
           category: selectedCategory,
           article: selectedLaw,
           description: description,
-          description: description,
           conduct: conduct,
           amount: amount,
         }),

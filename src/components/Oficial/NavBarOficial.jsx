@@ -7,15 +7,15 @@ const NavBarOficial = ({ username, onLogout }) => {
     <header className="header">
       <div className="logo"> </div>
       <nav className="nav">
-        <Link to="/home">
+        <Link to="/homeOficial">
           <button className="nav-button">INICIO</button>
         </Link>
-        <Link to="/multas">
+        <Link to="/oficialMulta">
           <button className="nav-button">MULTAS</button>
         </Link>
-        <Link to="/vehiculos">
+        {/* <Link to="/vehiculos">
           <button className="nav-button">VEHICULOS</button>
-        </Link>
+        </Link> */}
         <Link to="/mapa">
           <button className="nav-button">MAPA</button>
         </Link>
