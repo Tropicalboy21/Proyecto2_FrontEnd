@@ -1,13 +1,12 @@
+import React, { useState, useEffect } from 'react';
 import '../../assets/styles/stylesJuez/homeJuez.css';
 import '../../assets/styles/app.css';
-import React, { useState, useEffect } from 'react';
 
 const images = [
     'src/assets/imgs/img1.jpg',
     'src/assets/imgs/img2.jpg',
     'src/assets/imgs/img3.png',
     'src/assets/imgs/img4.png',
-
 ];
 
 function Juez() {
@@ -22,41 +21,48 @@ function Juez() {
 
     return (
         <div className="home">
-            <header className="NavBarJuez"></header>
-            <main className="content">
-                <div className="intro">
-                    <h1>¡Bienvenido Juez!</h1>
+            <div className="left-panel">
+                <h1>¡Bienvenido Juez!</h1>
+            </div>
+            <div className="center-panel">
+                <img
+                    src="src/assets/imgs/MARTILLO.png"
+                    alt="Martillo giratorio"
+                    className="rotating-image"
+                />
+                <button className="btn-disputas" href="../Disputas">Disputas</button>
 
-                    <div className="carousel-container">
-                        <div className="carousel">
-                            {images.map((img, index) => (
-                                <img
-                                    key={index}
-                                    src={img}
-                                    alt={`Slide ${index + 1}`}
-                                    className={`carousel-image ${currentIndex === index ? 'active' : ''}`}
-                                />
-                            ))}
-                        </div>
-                        <div className="indicators">
-                            {images.map((_, index) => (
-                                <span
-                                    key={index}
-                                    className={`indicator ${currentIndex === index ? 'active' : ''}`}
-                                ></span>
-                            ))}
-                        </div>
+            </div>
+            <div className="right-panel">
+    <div className="carousel-container">
+        <div className="carousel">
+            {images.map((img, index) => (
+                <img
+                    key={index}
+                    src={img}
+                    alt={`Slide ${index + 1}`}
+                    className={`carousel-image ${
+                        currentIndex === index ? 'active' : ''
+                    }`}
+                />
+            ))}
+        </div>
+        <div className="indicators">
+            {images.map((_, index) => (
+                <span
+                    key={index}
+                    className={`indicator ${
+                        currentIndex === index ? 'active' : ''
+                    }`}
+                ></span>
+                        ))}
                     </div>
-                    <button className="btn-general">Más Información</button>
                 </div>
-                <section className="intro">
-                    <h2>Lista de acciones pendientes</h2>
-                    <a href="/crear-multas" className="btn-general">Notificaciones</a>
-                    </section>
-                <div className="illustration"></div>
-            </main>
+            </div>
         </div>
     );
 }
 
 export default Juez;
+
+
