@@ -10,17 +10,11 @@ const NavBarJuez = ({ username, onLogout }) => {
         <Link to="/homeJuez">
           <button className="nav-button">Prueba</button>
         </Link>
-        <Link to="/multas">
-          <button className="nav-button">Registrar MULTAS</button>
-        </Link>
-        <Link to="/vehiculos">
-          <button className="nav-button">VEHICULOS</button>
+        <Link to="/homeJuez">
+          <button className="nav-button">Disputas</button>
         </Link>
         <Link to="/disputas">
           <button className="nav-button">Reglamentos</button>
-        </Link>
-        <Link to="/notificaciones">
-          <button className="nav-button">Notificaciones</button>
         </Link>
         {/* <Link to="/historial">
           <button className="nav-button">HISTORIAL</button>
