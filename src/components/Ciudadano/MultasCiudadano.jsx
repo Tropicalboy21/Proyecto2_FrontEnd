@@ -5,12 +5,15 @@ import ImagenLogo from '../../assets/imgs/logo.png'
 import MoptLogo from '../../assets/imgs/mopt.png'
 import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useNavigate } from 'react-router-dom';
 
 const Multas = () => {
   const [fines, setFines] = useState([]);
   const [error, setError] = useState(null);
   const [expandedFineId, setExpandedFineId] = useState(null);
   const [filter, setFilter] = useState('all'); // Filter state: 'all' or 'active'
+  const navigate = useNavigate();
+
 
   const username = localStorage.getItem('username');
 
@@ -30,6 +33,7 @@ const Multas = () => {
 
         const data = await response.json();
         setFines(Array.isArray(data) ? data : []);
+
       } catch (err) {
         setError(err.message);
       }
@@ -41,10 +45,12 @@ const Multas = () => {
   }, [username]);
 
   // Calculate total balance
-  const totalBalance = fines.reduce((sum, fine) => sum + fine.amount, 0);
+  const totalBalance = fines  
+    .filter((fine) => fine.paymentId == 0)
+    .reduce((sum, fine) => sum + fine.amount, 0);
 
   // Handle filtering
-  const filteredFines = filter === 'active' ? fines.filter((fine) => !fine.paid) : fines;
+  const filteredFines = filter === 'active' ? fines.filter((fine) => fine.paymentId == 0) : fines;
 
   // Function to handle expansion
   const toggleExpand = (fineId) => {
@@ -52,9 +58,9 @@ const Multas = () => {
   };
 
   // Function to handle payment
-  const handlePay = (fineId) => {
-    console.log(`Paying fine with ID: ${fineId}`);
-    // Add functionality to call an API for payment
+  const handlePay = (fineId, amount) => {
+    console.log(`Paying fine with ID: ${fineId} and amount: ${amount}`);
+    navigate('/pagoCiudadano', { state: { fineId, amount } });
   };
 
   // Function to handle dispute
@@ -62,6 +68,13 @@ const Multas = () => {
     console.log(`Disputing fine with ID: ${fineId}`);
     // Add functionality to open a dispute form or call an API
   };
+
+  const getFineStatus = (fine) => {
+    if (fine.paymentId != 0) {
+      return 'Resuelta'; // Acvtiva
+    }
+    return 'Activa'; // Pending
+  }
 
   return (
     <div className="view-container">
@@ -83,6 +96,7 @@ const Multas = () => {
             className="filter-dropdown"
           >
             <option value="all">Todas</option>
+            <option value="result">Resueltas</option>
             <option value="active">Activas</option>
           </select>
         </div>
@@ -93,7 +107,6 @@ const Multas = () => {
           <div className="lista-multas">
             {filteredFines.length > 0 ? (
               filteredFines.map((fine) => (
-                
                 <div
                   className={`m-item ${expandedFineId === fine.id ? 'expanded' : ''}`}
                   key={fine.id}
@@ -147,7 +160,7 @@ const Multas = () => {
                                 })
                                 .replace(',', '')}
                                 </td>
-                              <td>{fine.paid ? 'Pagada' : 'Activa'}</td>
+                              <td>{getFineStatus(fine)}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -162,8 +175,22 @@ const Multas = () => {
                       <p>{fine.description}</p>
                       <p><strong>Monto:</strong> ₡{fine.amount.toLocaleString()}</p>
                       <hr />
-                      <button className="edit-button" onClick={() => handlePay(fine.id)}>Pagar</button>
-                      <button className="edit-button" onClick={() => handleDispute(fine.id)}>Disputar</button>
+                        <button
+                        className="edit-button"
+                        onClick={() => handlePay(fine.id, fine.amount)}
+                        disabled={fine.disputeId !== 0 || fine.paymentId !== 0}
+                      >
+                        Pagar
+                      </button>
+
+                      <button
+                        className="edit-button"
+                        onClick={() => handleDispute(fine.id)}
+                        disabled={fine.disputeId !== 0 || fine.paymentId !== 0}
+                      >
+                        Disputar
+                      </button>
+
                       <button className="edit-button" onClick={() => handleDispute(fine.id)}>PDF</button>
     
                       
@@ -177,19 +204,19 @@ const Multas = () => {
                       <div className="d-item">{fine.description}</div>
                       <div className="a-item">₡{fine.amount.toLocaleString()}</div>
                       <div className="f-item">{new Date(fine.issuedDate).toLocaleDateString()}</div>
-                      <div className="e-item"><strong>Estado:</strong> {fine.paid ? 'Pagada' : 'Activa'}</div>
+                      <div className="e-item"><strong>Estado:</strong> {getFineStatus(fine)}</div>
                       <KeyboardArrowDownIcon
                       className={`toggle-arrow ${expandedFineId === fine.id ? 'rotated' : ''}`}
                     />
                     </div>
-                  )}
+                  )} 
                 </div>
               ))
             ) : (
               <p>No se encontraron multas.</p>
             )}
           </div>
-        )}
+        )} 
       </main>
     </div>
   );

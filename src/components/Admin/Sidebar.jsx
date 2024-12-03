@@ -38,14 +38,14 @@ const Sidebar = ({ onLogout }) => {
               <PersonIcon fontSize="small" sx={{ color: 'white' }} />
               <Link to="/usuariosAdmi">Usuarios</Link>
             </li>
-            <li>
+            {/* <li>
               <FolderIcon fontSize="small" sx={{ color: 'white' }} />
               <Link to="/registrosAdmi">Registros</Link>
             </li>
             <li>
               <GavelIcon fontSize="small" sx={{ color: 'white' }} />
               <Link to="/disputasAdmi">Disputas</Link>
-            </li>
+            </li> */}
             <li>
               <SettingsIcon fontSize="small" sx={{ color: 'white' }} />
               <Link to="/cuentaAdmi">Cuenta</Link>

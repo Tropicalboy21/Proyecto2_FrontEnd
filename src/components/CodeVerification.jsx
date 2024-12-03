@@ -40,6 +40,10 @@ const CodeVerification = ({username}) =>{
       // Navigate based on the user's role
       if (data.role === 'Admin') {
         navigate('/homeAdmi');
+      } else if (data.role === 'Officer') {
+        navigate('/homeOficial');
+      } else if (data.role === 'Judge') {
+        navigate('/homeJuez');
       } else {
         navigate('/homeCiudadano');
       }

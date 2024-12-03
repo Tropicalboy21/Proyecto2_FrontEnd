@@ -21,7 +21,7 @@ const VehiculosCiudadano = () => {
   const addVehicle = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://localhost:7289/api/Vehiculos', {
+      const response = await fetch('https://localhost:7289/api/Vehicles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const VehiculosCiudadano = () => {
     const fetchVehicles = async () => {
       try {
         
-        const response = await fetch(`https://localhost:7289/api/Vehiculos?userin=${username}`, {
+        const response = await fetch(`https://localhost:7289/api/Vehicles?userin=${username}`, {
           
           method: 'GET',
           headers: {

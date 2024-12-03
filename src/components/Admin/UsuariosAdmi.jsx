@@ -14,7 +14,7 @@ const UsuariosAdmi = () => {
     const [showAlert, setShowAlert] = useState(false); 
     const [alertType, setAlertType] = useState(''); 
     const [alertMessage, setAlertMessage] = useState('');
-    // const [isChecked, setIsChecked] = useState(false);
+    const [error, setError] = useState('');
     const [activeTab, setActiveTab] = useState("Registrar");
 
     const handleRegister = async (e) => {

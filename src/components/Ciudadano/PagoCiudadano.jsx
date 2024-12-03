@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation  } from 'react-router-dom';
 import '../../assets/styles/app.css';
 import ImagenLogo from '../../assets/imgs/logo.png';
 import Alert from '../Alert';
 
 const PagoMulta = () => {
+  const location = useLocation();
+  const { fineId, amount } = location.state || {};
   const [cardNumber, setCardNumber] = useState('');
   const [cardDate, setCardDate] = useState('');
   const [cardName, setCardName] = useState('');
@@ -14,7 +16,7 @@ const PagoMulta = () => {
   const [alertType, setAlertType] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
 
-  const fineId = localStorage.getItem('username');
+  const username = localStorage.getItem('username');
 
   const registerPayment = async (e) => {
     e.preventDefault();
@@ -25,9 +27,10 @@ const PagoMulta = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          fineId: "2525",
-          amount: "1000",
-          paymentDate: "2024-11-28", 
+          fineId: fineId,
+          userName: username,
+          amount: amount,
+          paymentMethod: 'Card'
         }),
       });
 
@@ -51,6 +54,9 @@ const PagoMulta = () => {
     setAlertMessage('');
   };
 
+  const today = new Date();
+  const currentDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+
   return (
     <div className="view-container">
       {showAlert && <Alert type={alertType} message={alertMessage} onClose={handleCloseAlert} />}
@@ -60,7 +66,7 @@ const PagoMulta = () => {
         <div className="Inputs">
 
         <p>Id de Multa: {fineId} </p>   
-        <p>Fecha de Multa: {fineId}</p>
+        <p>Fecha de Pago: {currentDate}</p>
 
         <p>Numero de la Tarjeta: </p>   
           <input
@@ -92,7 +98,7 @@ const PagoMulta = () => {
           />
     
 
-          <p>Monto a Pagar: ₡ {fineId}</p>
+          <p>Monto a Pagar: ₡ {amount}</p>
 
         </div>
         <div className="Buttons">

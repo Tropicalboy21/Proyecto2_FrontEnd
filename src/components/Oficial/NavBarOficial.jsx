@@ -13,9 +13,9 @@ const NavBarOficial = ({ username, onLogout }) => {
         <Link to="/oficialMulta">
           <button className="nav-button">MULTAS</button>
         </Link>
-        {/* <Link to="/vehiculos">
+        <Link to="/vehiculosOficial">
           <button className="nav-button">VEHICULOS</button>
-        </Link> */}
+        </Link>
         <Link to="/mapa">
           <button className="nav-button">MAPA</button>
         </Link>
