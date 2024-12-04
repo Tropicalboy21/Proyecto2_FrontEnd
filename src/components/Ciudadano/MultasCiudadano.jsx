@@ -70,7 +70,7 @@ const Multas = () => {
   };
 
   const getFineStatus = (fine) => {
-    if (fine.paymentId != 0) {
+    if (fine.paymentId !== 0) {
       return 'Resuelta'; // Acvtiva
     }
     return 'Activa'; // Pending
@@ -186,7 +186,7 @@ const Multas = () => {
                       <button
                         className="edit-button"
                         onClick={() => handleDispute(fine.id)}
-                        disabled={fine.disputeId !== 0 || fine.paymentId !== 0}
+                        disabled={fine.disputeId !== null || fine.paymentId !== null }
                       >
                         Disputar
                       </button>
@@ -201,7 +201,7 @@ const Multas = () => {
                     // Collapsed Layout
                     <div className="collapsed-layout">
                       <div>{fine.id}</div>
-                      <div className="d-item">{fine.description}</div>
+                      <div className="d-item">{fine.category}</div>
                       <div className="a-item">₡{fine.amount.toLocaleString()}</div>
                       <div className="f-item">{new Date(fine.issuedDate).toLocaleDateString()}</div>
                       <div className="e-item"><strong>Estado:</strong> {getFineStatus(fine)}</div>
