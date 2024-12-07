@@ -46,11 +46,11 @@ const Multas = () => {
 
   // Calculate total balance
   const totalBalance = fines  
-    .filter((fine) => fine.paymentId == 0)
+    .filter((fine) => fine.estado == false)
     .reduce((sum, fine) => sum + fine.amount, 0);
 
   // Handle filtering
-  const filteredFines = filter === 'active' ? fines.filter((fine) => fine.paymentId == 0) : fines;
+  const filteredFines = filter === 'active' ? fines.filter((fine) => fine.estado == false) : fines;
 
   // Function to handle expansion
   const toggleExpand = (fineId) => {
@@ -70,7 +70,10 @@ const Multas = () => {
   };
 
   const getFineStatus = (fine) => {
-    if (fine.paymentId !== 0) {
+
+    console.log(fine.estado);
+
+    if (fine.estado == true) {
       return 'Resuelta'; // Acvtiva
     }
     return 'Activa'; // Pending
@@ -178,7 +181,7 @@ const Multas = () => {
                         <button
                         className="edit-button"
                         onClick={() => handlePay(fine.id, fine.amount)}
-                        disabled={fine.disputeId !== 0 || fine.paymentId !== 0}
+                        disabled={fine.estado == true}
                       >
                         Pagar
                       </button>
@@ -186,7 +189,7 @@ const Multas = () => {
                       <button
                         className="edit-button"
                         onClick={() => handleDispute(fine.id)}
-                        disabled={fine.disputeId !== null || fine.paymentId !== null }
+                        disabled={fine.estado == true}
                       >
                         Disputar
                       </button>

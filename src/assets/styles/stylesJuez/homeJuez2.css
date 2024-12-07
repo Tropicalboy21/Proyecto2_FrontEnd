@@ -1,0 +1,177 @@
+.left-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.left-panel h1 {
+    font-size: 24px;
+    color: #333;
+    margin-left: 120px;
+}
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.martillo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.martillo-image {
+    width: 120px;
+    height: 120px;
+    animation: bounce 2s infinite;
+    z-index: 2;
+    margin-left: 45px;
+}
+.effect-rays {
+    position: absolute;
+    bottom: 35px;
+    left: 40px;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(255, 200, 0, 0.7), 
+transparent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: flash 2s infinite;
+    z-index: 1;
+}
+.static-image {
+    width: 100px;
+    height: 50px;
+    object-fit: cover;
+    margin-top: -5px;
+}
+.btn-disputas {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-disputas:hover {
+    background-color: #E64A19;
+}
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.carousel {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease;
+    opacity: 0;
+}
+.carousel-image.active {
+    left: 0;
+    opacity: 1;
+}
+.indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 10px;
+}
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.indicator.active {
+    background-color: #FF5722;
+    transform: scale(1.2);
+}
+/* Animaciones */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(45px);
+    }
+}
+@keyframes flash {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+/* Responsiveness */
+@media (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-panel h1 {
+        font-size: 24px;
+        color: #333;
+        margin-left: -0px;
+    }
+    .right-panel,
+    .left-panel,
+    .center-panell {
+        margin-bottom: 20px;
+    }
+    .martillo-image {
+        width: 100px;
+        height: 100px;
+    }
+    .carousel {
+        height: 200px;
+    }
+    .btn-disputas {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}

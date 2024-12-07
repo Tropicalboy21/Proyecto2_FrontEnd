@@ -211,6 +211,7 @@ const UsuariosAdmi = () => {
               {users.length > 0 ? (
                 users.map((user) => (
                   <tr>
+                    <td>{user.firstName}</td>
                     <td>{user.userName}</td>
                     <td>{user.email}</td>
                     <td>{user.role}</td>

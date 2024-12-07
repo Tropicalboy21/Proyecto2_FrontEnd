@@ -23,6 +23,7 @@ import DisputasAdmi from './components/Admin/DisputasAdmi';
 import CuentaAdmi from './components/Admin/CuentaAdmi';
 import OficialMulta from './components/Oficial/OficialMulta';
 import PagoCiudadano from './components/Ciudadano/PagoCiudadano';
+import HomeJuez2 from './components/Juez/HomeJuez2';
 
 
 const App = () => {
@@ -83,6 +84,7 @@ const App = () => {
 
             {/* Juez */}
             <Route path="/homeJuez" element={<HomeJuez />} />
+            <Route path="/homeJuez2" element={<HomeJuez2 />} />
 
             {/* Shared */}
             <Route path="/mapa" element={<Mapa />} />

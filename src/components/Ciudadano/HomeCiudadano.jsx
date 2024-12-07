@@ -8,23 +8,22 @@ function Home() {
             <header className="Navbar">
             </header>
             <main className="content">
-                <div className="intro">
-                    <h1>¡Bienvenido a Transito Inteligente!</h1>
-                    <p>Nuestro objetivo es facilitar el pago y gestion de multas de transito 
+                <div className=''>
+                <h1 className='title-home'>¡Bienvenido a Tránsito Inteligente!</h1>
+                <p>Nuestro objetivo es facilitar el pago y gestion de multas de transito 
                       para tanto ciudadanos como para oficiales de transito
                       facilitando  asi el proceso de una manera mas rapilla y sencilla.</p>
-                    <button className="more-info">Mas Informacion</button>
-                </div>
-                <section className="intro">
-                <h1>¿Por qué pagar tus multas a tiempo?</h1>
+                      <button className="more-info">Mas Informacion</button>
+
+                      <h1>¿Por qué pagar tus multas a tiempo?</h1>
                 <ul>
                     <p>Evita recargos y multas adicionales.</p>
                     <p>Mantén tu historial de conducción limpio.</p>
                     <p>Contribuye a la seguridad vial.</p>
                 </ul>
-            </section>
-                <div className="illustration">
-                </div>
+                {/* <div className="illustration">
+                </div> */}
+            </div>
             </main>
         </div>
     );
