@@ -15,11 +15,11 @@ const ProtectedLayout = ({ isLoggedIn, onLogout }) => {
         location.pathname.startsWith(route)
     );
 
-    const isOficialRoute = ['/homeOficial', '/creacionMulta', '/oficialMulta'].some(route =>
+    const isOficialRoute = ['/homeOficial', '/creacionMulta', '/oficialMulta', '/multasOficial', '/cuentaOficial'].some(route =>
         location.pathname.startsWith(route)
     );
 
-    const isJuezRoute = ['/homeJuez'].some(route =>
+    const isJuezRoute = ['/homeJuez', '/multasJuez', '/disputasJuez', '/reglamentoJuez', '/cuentaJuez'].some(route =>
         location.pathname.startsWith(route)
     );
 

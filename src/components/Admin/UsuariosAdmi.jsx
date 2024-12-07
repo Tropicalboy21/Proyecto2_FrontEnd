@@ -202,6 +202,8 @@ const UsuariosAdmi = () => {
               <table>
                 <thead>
                   <tr>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
                     <td>Usuario</td>
                     <td>Correo</td>
                     <td>Rol</td>
@@ -212,6 +214,7 @@ const UsuariosAdmi = () => {
                 users.map((user) => (
                   <tr>
                     <td>{user.firstName}</td>
+                    <td>{user.lastName}</td>
                     <td>{user.userName}</td>
                     <td>{user.email}</td>
                     <td>{user.role}</td>

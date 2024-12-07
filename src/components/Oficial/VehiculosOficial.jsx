@@ -112,8 +112,7 @@ registro);
   
       if (response.data) {
         console.log('Datos recibidos:', response.data);
-        setVehiculoInfo(response.data); // Asignar los datos al 
-estado
+        setVehiculoInfo(response.data); // Asignar los datos al estado
         handleShowAlert('success', 'Vehículo encontrado.');
       } else {
         setVehiculoInfo(null);

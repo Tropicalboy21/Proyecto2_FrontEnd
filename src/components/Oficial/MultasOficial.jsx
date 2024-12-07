@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useNavigate } from 'react-router-dom';
 
-const Multas = () => {
+const MultasOficial = () => {
   const [fines, setFines] = useState([]);
   const [error, setError] = useState(null);
   const [expandedFineId, setExpandedFineId] = useState(null);
@@ -20,7 +20,7 @@ const Multas = () => {
   useEffect(() => {
     const fetchFines = async () => {
       try {
-        const response = await fetch(`https://localhost:7289/api/Fines?userin=${username}`, {
+        const response = await fetch(`https://localhost:7289/api/Fines/fines-by-officer?userin=${username}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -58,41 +58,29 @@ const Multas = () => {
   };
 
   // Function to handle payment
-  const handlePay = (fineId, amount) => {
-    console.log(`Paying fine with ID: ${fineId} and amount: ${amount}`);
-    navigate('/pagoCiudadano', { state: { fineId, amount } });
+  const NewFine = () => {
+    console.log(`Processing...`);
+    navigate('/oficialMulta');
   };
-
-  // // Function to handle dispute
-  // const handleDispute = (fineId) => {
-  //   console.log(`Disputing fine with ID: ${fineId}`);
-  //   // Add functionality to open a dispute form or call an API
-  // };
-
-  
-  
-
 
   const getFineStatus = (fine) => {
 
     console.log(fine.estado);
 
     if (fine.estado == true) {
-      return 'Resuelta'; // Acvtiva
+      return 'Resuelta'; // Activa
     }
     return 'Activa'; // Pending
   }
 
   return (
     <div className="view-container">
+
       <main className="main-content">
         <h1 className="title">Multas</h1>
 
-        {/* Balance Section */}
-        <div className="balance-section">
-          <p>Saldo Actual: ₡{totalBalance.toLocaleString()}</p>
-        </div>
-
+        <div className="f-btns">
+    
         {/* Filter Section */}
         <div className="filter-section">
           <label htmlFor="filter">Filtrar:</label>
@@ -106,6 +94,12 @@ const Multas = () => {
             <option value="result">Resueltas</option>
             <option value="active">Activas</option>
           </select>
+        </div>
+
+        <div className='btnNF'>
+            <p>Registrar nueva multa</p>
+        <button className="newfine" onClick={() => NewFine()}>+</button>
+        </div>
         </div>
 
         {error ? (
@@ -181,25 +175,6 @@ const Multas = () => {
                       <p><strong>Observaciones:</strong> </p>
                       <p>{fine.description}</p>
                       <p><strong>Monto:</strong> ₡{fine.amount.toLocaleString()}</p>
-                      <hr />
-                        <button
-                        className="edit-button"
-                        onClick={() => handlePay(fine.id, fine.amount)}
-                        disabled={fine.estado == true}
-                      >
-                        Pagar
-                      </button>
-
-                      <button
-                        className="edit-button"
-                        onClick={() => handleDispute(fine.id)}
-                        disabled={fine.estado == true}
-                      >
-                        Disputar
-                      </button>
-
-                      <button className="edit-button" onClick={() => handleDispute(fine.id)}>PDF</button>
-    
                       
                     </div>
                     </div>
@@ -220,7 +195,7 @@ const Multas = () => {
                 </div>
               ))
             ) : (
-              <p>No se encontraron multas.</p>
+              <p className='msg-nf'>No se encontraron multas.</p>
             )}
           </div>
         )} 
@@ -229,4 +204,4 @@ const Multas = () => {
   );
 };
 
-export default Multas;
+export default MultasOficial;

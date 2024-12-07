@@ -28,16 +28,16 @@ images.length);
             <div className="center-panel">
                 <div className="martillo-container">
                     <img
-                        src="src/assets/imgs/martillo2.png"
+                        src="src/assets/imgs/MARTILLO.png"
                         alt="Martillo animado"
                         className="martillo-image"
                     />
-                    <div className="effect-rays"></div>
-                    <img
-                        src="src/assets/imgs/im1.png"
+                    {/* <div className="effect-rays"></div> */}
+                    {/* <img
+                        src="src/assets/imgs/img1.jpg"
                         alt="Imagen im1"
                         className="static-image"
-                    />
+                    /> */}
                 </div>
                 <button className="btn-disputas">Disputas</button>
             </div>

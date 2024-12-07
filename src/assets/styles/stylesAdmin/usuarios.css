@@ -62,6 +62,7 @@
     transition: all 0.5s;
 }
 
+
 .component-head .tab:hover{
     color: hsl(0, 67%, 45%);
 }

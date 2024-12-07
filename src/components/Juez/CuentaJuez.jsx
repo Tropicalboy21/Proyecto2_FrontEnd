@@ -6,7 +6,7 @@ import MoptLogo from '../../assets/imgs/mopt.png';
 import { useNavigate } from 'react-router-dom';
 import profileImg from '../../assets/imgs/progile_img.webp'
 
-const PerfilCiudadano = () => {
+const CuentaJuez = () => {
     const [profile, setProfile] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
@@ -92,4 +92,4 @@ const PerfilCiudadano = () => {
     );
 };
 
-export default PerfilCiudadano;
+export default CuentaJuez;

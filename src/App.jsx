@@ -7,7 +7,7 @@ import Register from './components/Register';
 import ResetPassword from './components/ResetPassword'; 
 import Footer from './components/Footer';
 import MultasCiudadano from './components/Ciudadano/MultasCiudadano';
-import ProtectedLayout from './components/ProtectedLayout';
+import ProtectedLayout from './components/ProtectedLayoutTemp';
 import CodeVerification from './components/CodeVerification';
 import CreacionMulta from './components/Oficial/CreacionMulta';
 import HomeAdmi from './components/Admin/HomeAdmi';
@@ -23,7 +23,13 @@ import DisputasAdmi from './components/Admin/DisputasAdmi';
 import CuentaAdmi from './components/Admin/CuentaAdmi';
 import OficialMulta from './components/Oficial/OficialMulta';
 import PagoCiudadano from './components/Ciudadano/PagoCiudadano';
-import HomeJuez2 from './components/Juez/HomeJuez2';
+import PerfilCiudadano from './components/Ciudadano/PerfilCiudadano';
+import CuentaOficial from './components/Oficial/CuentaOficial';
+import MultasOficial from './components/Oficial/MultasOficial';
+import MultasJuez from './components/Juez/MultasJuez';
+import DisputasJuez from './components/Juez/disputasJuez';
+import CuentaJuez from './components/Juez/CuentaJuez';
+import ReglamentoJuez from './components/Juez/ReglamentoJuez';
 
 
 const App = () => {
@@ -75,16 +81,22 @@ const App = () => {
             <Route path="/disputasCiudadano" element={<DisputasCiudadano />} />
             <Route path="/multasCiudadano" element={<MultasCiudadano username={username} />} />
             <Route path="/pagoCiudadano" element={<PagoCiudadano username={username} />} />
+            <Route path="/perfilCiudadano" element={<PerfilCiudadano username={username} />} />
 
   
             {/* Oficial */}
             <Route path="/homeOficial" element={<HomeOficial />} />
             <Route path="/vehiculosOficial" element={<VehiculosOficial />} />
+            <Route path="/multasOficial" element={<MultasOficial/>} />
             <Route path="/oficialMulta" element={<OficialMulta/>} />
+            <Route path="/cuentaOficial" element={<CuentaOficial/>} />
 
             {/* Juez */}
             <Route path="/homeJuez" element={<HomeJuez />} />
-            <Route path="/homeJuez2" element={<HomeJuez2 />} />
+            <Route path="/multasJuez" element={<MultasJuez />} />
+            <Route path="/disputasJuez" element={<DisputasJuez />} />
+            <Route path="/reglamentoJuez" element={<ReglamentoJuez />} />
+            <Route path="/cuentaJuez" element={<CuentaJuez />} />
 
             {/* Shared */}
             <Route path="/mapa" element={<Mapa />} />

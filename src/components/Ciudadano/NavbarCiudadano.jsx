@@ -35,6 +35,9 @@ const Navbar = ({ username, onLogout }) => {
         <Link to="/mapa">
           <button className="nav-button">Mapa</button>
         </Link>
+        <Link to="/perfilCiudadano">
+          <button className="nav-button">Cuenta</button>
+        </Link>
         <button className="nav-button logout" onClick={onLogout}>
           Salir
         </button>

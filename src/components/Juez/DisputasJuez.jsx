@@ -6,7 +6,7 @@ import MoptLogo from '../../assets/imgs/mopt.png';
 import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Disputas = () => {
+const DisputasJuez = () => {
   const [disputes, setDisputes] = useState([]);
   const [error, setError] = useState(null);
   const [expandedDisputeId, setExpandedDisputeId] = useState(null);
@@ -16,7 +16,7 @@ const Disputas = () => {
   useEffect(() => {
     const fetchDisputes = async () => {
       try {
-        const response = await fetch(`https://localhost:7289/api/Disputes?userin=${username}`, {
+        const response = await fetch(`https://localhost:7289/api/Disputes/get-all-disputes`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });
@@ -36,6 +36,12 @@ const Disputas = () => {
       fetchDisputes();
     }
   }, [username]);
+
+  const handleFine = () => {
+    // console.log(`Paying fine with ID: ${fineId} and amount: ${amount}`);
+    navigate('/pagoCiudadano',);
+  };
+
 
   const toggleExpand = (disputeId) => {
     setExpandedDisputeId(expandedDisputeId === disputeId ? null : disputeId);
@@ -73,8 +79,9 @@ const Disputas = () => {
                         <img src={MoptLogo} alt="Mopt" className="imagen2" />
                       </div>
                       <p><strong>ID:</strong> {dispute?.id || 'N/A'}</p>
+                      <p><strong>Multa:</strong> {dispute?.fine.conduct || 'N/A'}</p>
                       <p>
-                        <strong>Fecha de creación:</strong>{' '}
+                        <strong>Fecha de cración:</strong>{' '}
                         {dispute?.createdDate
                           ? new Date(dispute.createdDate).toLocaleDateString()
                           : 'N/A'}
@@ -91,7 +98,16 @@ const Disputas = () => {
                           : 'N/A'}
                       </p> */}
                       <p><strong>Razon:</strong> {dispute?.reason || 'N/A'}</p>
-                      <p><strong>Razon:</strong> {dispute?.isResolved || 'N/A'}</p>
+                      <p><strong>Juez:</strong> {dispute?.judge.userName || 'N/A'}</p>
+                      <p><strong>Resolución:</strong> {dispute?.resolution || 'N/A'}</p>
+                      <p><strong>Fecha de Resolución:</strong> {dispute?.resolutionDate? new Date(dispute.resolutionDate).toLocaleDateString() : 'N/A'}</p>
+                      <button
+                        className="edit-button"
+                        onClick={() => handleFine()}
+                        disabled={dispute.isResolved == true}
+                      >
+                        Resolver
+                      </button>
                     </div>
                   </div>
                 ) : (
@@ -126,4 +142,4 @@ const Disputas = () => {
   );
 };
 
-export default Disputas;
+export default DisputasJuez;
